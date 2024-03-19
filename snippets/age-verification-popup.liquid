@@ -91,7 +91,13 @@
         <p>{{ settings.age_popup_subheading }}</p>
         <input type="date" id="dob">
         <div class="footer-popup">
-          <button onclick="checkAge()">{{ settings.age_popup_button_txt }}</button>
+          <button onclick="checkAge()">
+            {% if settings.age_popup_button_txt != '' %}
+              {{ settings.age_popup_button_txt }}
+            {% else %}
+              Submit
+            {% endif %}
+          </button>
         </div>  
         <p id="error-message"></p>
     </div>
