@@ -1,0 +1,191 @@
+{% liquid
+  assign age = settings.age_popup_years
+  assign cookiesTime = settings.age_popup_days
+  assign collectionList = settings.age_popup_collection
+  assign textColor = settings.age_popup_heading_color
+  assign popBGColor = settings.age_popup_scheme
+  assign LogoImage = settings.age_popup_logo
+%}
+{% for collectionValidate in collectionList %}
+  {% if collectionValidate.handle == collection.handle %}
+    <style>
+      #age-verification-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 25px 40px;
+    background-color: #fff;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 123;
+    overflow: hidden;
+}
+      #age-verification-popup h6 {
+    color: #000;
+    letter-spacing: 0;
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+        .footer-popup {
+    padding: 0;
+    display: inline-block;
+}
+     .footer-popup button {
+    border: 0;
+    padding: 12px 53px;
+    font-weight: 700;
+    background: #111;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 5px;
+    transition: 0.3s;
+}
+      .footer-popup button:hover {
+          background: #000;
+          border-color: #000;
+      }
+      #error-message {
+    color: red;
+    margin-top: 30px;
+    margin-bottom: -10px;
+}
+      #age-verification-popup .close {
+    border: 0;
+    background: #f5f5f5;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.2rem;
+    float: right;
+    margin: -20px -15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+      #age-verification-popup .close:hover {
+          background: #ebebeb;
+      }
+      #age-verification-popup img {
+          width: 350px;
+          margin-top: 1rem;
+      }
+      #age-verification-popup h6 + p {
+    letter-spacing: 0;
+    padding: 0 5rem;
+    margin: 1rem 0 2rem;
+}
+      #age-verification-popup input {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+}
+.AgePopup-overlay {
+    position: relative;
+}
+.AgePopup-overlay:after {
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    content: "";
+    inset: 0;
+    z-index: 12;
+}
+</style>
+    <div id="age-verification-popup">
+       <button class="close" onclick="closePopup()">
+         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+          </svg>
+       </button>
+       {% if LogoImage != blank %} <img src="{{ LogoImage | image_url }}" width="" height="" />{% endif %}
+        <h6>{{ settings.age_popup_heading }}</h6>
+        <p>{{ settings.age_popup_subheading }}</p>
+        <input type="date" id="dob">
+        <div class="footer-popup">
+          <button onclick="checkAge()">
+              {{ settings.age_popup_button_txt }}
+          </button>
+        </div>  
+        <p id="error-message"></p>
+    </div>
+    <script>
+      var ifAdminEditor = window.location.href;
+      if (ifAdminEditor.indexOf('oseid') === -1) {
+        function checkAge() {
+            var daysToAdd = '{{ cookiesTime }}';
+            var ageSettings = '{{ age }}';
+            var dobInput = document.getElementById('dob');
+            var errorMessage = document.getElementById('error-message');
+            var dob = new Date(dobInput.value);
+            var currentDate = new Date();
+            var age = currentDate.getFullYear() - dob.getFullYear();
+            var futureDate = new Date(currentDate.getTime() + daysToAdd * 24 * 60 * 60 * 1000);
+            // Check if the user is over 18 years old
+            if (age >= ageSettings) {
+                // Set cookie to remember age verification
+                document.cookie = "ageVerified=true; expires="+futureDate;
+                closePopup();
+            } else {
+                errorMessage.textContent = "Sorry, you must be at least "+ageSettings+" years old to access this content.";
+                setTimeout(function () {
+                  // Replace 'your_new_url' with the actual URL where you want to navigate
+                  window.location.href = '/';
+                }, 3000);
+            }
+        }
+        function closePopup() {
+            // Close the popup
+            var body = document.body;
+            body.classList.remove("AgePopup-overlay");
+             var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("ageVerified=true")) {
+                    //closePopup();
+                     var popup = document.getElementById('age-verification-popup');
+                      //popup.style.display = 'none';
+                      function fadeOut(element, duration) {
+                        var opacity = 1;
+                        var interval = 50; // Time interval in milliseconds
+                        var fadeOutTimer = setInterval(function () {
+                          if (opacity > 0) {
+                            opacity -= interval / duration;
+                            element.style.opacity = opacity;
+                          } else {
+                            clearInterval(fadeOutTimer);
+                            element.style.display = 'none';
+                          }
+                        }, interval);
+                      }
+                      fadeOut(popup, 1000); // 1000 milliseconds = 1 second
+                    return;
+                }else{
+                   window.location.href = '/';
+                }
+            }
+           
+        }
+        // Check if the user has already been verified
+        function checkCookie() {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith("ageVerified=true")) {
+                    // User has been verified, no need to show the popup
+                    closePopup();
+                    return;
+                }else{
+                  var body = document.body;
+                  body.classList.add("AgePopup-overlay");
+                }
+            }
+    
+            // Show the age verification popup
+            var popup = document.getElementById('age-verification-popup');
+            popup.style.display = 'block';
+        }
+        // Call checkCookie on page load
+        window.onload = checkCookie;
+      }
+    </script>
+  {% endif %}
+{% endfor %}
