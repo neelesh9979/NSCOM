@@ -1487,12 +1487,14 @@
       {
         "type": "text",
         "id": "age_popup_subheading",
-        "label": "Enter Sub Heading"
+        "label": "Enter Sub Heading",
+        "default": "Highly customisable age gate popup for logo, text & styling"
       },
       {
         "type": "text",
         "id": "age_popup_button_txt",
-        "label": "Enter Button Text"
+        "label": "Enter Button Text",
+        "default": "Submit"
       },
       {
         "type": "collection_list",
