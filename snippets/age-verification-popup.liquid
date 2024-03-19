@@ -79,7 +79,17 @@
     padding: 10px 15px;
     background-color: #f9f9f9;
 }
-    </style>
+.AgePopup-overlay {
+    position: relative;
+}
+.AgePopup-overlay:after {
+    background-color: rgba(0,0,0,0.8);
+    position: absolute;
+    content: "";
+    inset: 0;
+    z-index: 12;
+}
+</style>
     <div id="age-verification-popup">
        <button class="close" onclick="closePopup()">
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
