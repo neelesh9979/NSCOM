@@ -90,7 +90,6 @@
     z-index: 12;
 }
 </style>
-    {{ request.path }}
     <div id="age-verification-popup">
        <button class="close" onclick="closePopup()">
          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -98,6 +97,7 @@
           </svg>
        </button>
        {% if LogoImage != blank %} <img src="{{ LogoImage | image_url }}" width="" height="" />{% endif %}
+               {{ request.path }}
         <h6>{{ settings.age_popup_heading }}</h6>
         <p>{{ settings.age_popup_subheading }}</p>
         <input type="date" id="dob">
