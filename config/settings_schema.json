@@ -4,8 +4,8 @@
     "theme_name": "Dawn",
     "theme_version": "13.0.1",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -1463,6 +1463,70 @@
         "id": "cart_color_scheme",
         "label": "t:sections.all.colors.label",
         "default": "scheme-1"
+      }
+    ]
+  },
+  {
+    "name": "Age Popup Content",
+    "settings": [
+      {
+        "type": "header",
+        "content": "PopUp Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "age_popup_logo",
+        "label": "Select Logo Image"
+      },
+      {
+        "type": "text",
+        "id": "age_popup_heading",
+        "label": "Enter Heading"
+      },
+      {
+        "type": "text",
+        "id": "age_popup_subheading",
+        "label": "Enter Sub Heading"
+      },
+      {
+        "type": "text",
+        "id": "age_popup_button_txt",
+        "label": "Enter Button Text"
+      },
+      {
+        "type": "collection_list",
+        "id": "age_popup_collection",
+        "label": "Select collection for Age popup"
+      },
+      {
+        "type": "header",
+        "content": "Cookies Settings"
+      },
+      {
+        "type": "number",
+        "id": "age_popup_days",
+        "label": "Enter days for save cookies",
+        "default": 30
+      },
+      {
+        "type": "number",
+        "id": "age_popup_years",
+        "label": "Enter years",
+        "default": 18
+      },
+      {
+        "type": "header",
+        "content": "Color"
+      },
+      {
+        "type": "color",
+        "id": "age_popup_scheme",
+        "label": "Select Background Color"
+      },
+      {
+        "type": "color",
+        "id": "age_popup_heading_color",
+        "label": "Select Heading Color"
       }
     ]
   }
