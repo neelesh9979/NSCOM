@@ -108,7 +108,8 @@
         <p id="error-message"></p>
     </div>
     <script>
-      console.log('Location',window.location.href);
+      var ifAdminEditor = window.location.href;
+      if (ifAdminEditor.indexOf('oseid') === -1) {
         function checkAge() {
             var daysToAdd = '{{ cookiesTime }}';
             var ageSettings = '{{ age }}';
@@ -184,6 +185,7 @@
         }
         // Call checkCookie on page load
         window.onload = checkCookie;
+      }
     </script>
   {% endif %}
 {% endfor %}
