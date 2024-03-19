@@ -1481,7 +1481,8 @@
       {
         "type": "text",
         "id": "age_popup_heading",
-        "label": "Enter Heading"
+        "label": "Enter Heading",
+        "default": "Are you over 18 Years Olds"
       },
       {
         "type": "text",
