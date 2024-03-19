@@ -121,6 +121,7 @@
             if (age >= ageSettings) {
                 // Set cookie to remember age verification
                 document.cookie = "ageVerified=true; expires="+futureDate;
+              alert('over 18 years');
                 //closePopup();
             } else {
                 errorMessage.textContent = "Sorry, you must be at least "+ageSettings+" years old to access this content.";
