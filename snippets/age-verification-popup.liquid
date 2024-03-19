@@ -118,17 +118,17 @@
             var age = currentDate.getFullYear() - dob.getFullYear();
             var futureDate = new Date(currentDate.getTime() + daysToAdd * 24 * 60 * 60 * 1000);
             // Check if the user is over 18 years old
-            if (age >= ageSettings) {
-                // Set cookie to remember age verification
-                document.cookie = "ageVerified=true; expires="+futureDate;
-                closePopup();
-            } else {
-                errorMessage.textContent = "Sorry, you must be at least "+ageSettings+" years old to access this content.";
-                setTimeout(function () {
-                  // Replace 'your_new_url' with the actual URL where you want to navigate
-                  window.location.href = '/';
-                }, 3000);
-            }
+            // if (age >= ageSettings) {
+            //     // Set cookie to remember age verification
+            //     document.cookie = "ageVerified=true; expires="+futureDate;
+            //     closePopup();
+            // } else {
+            //     errorMessage.textContent = "Sorry, you must be at least "+ageSettings+" years old to access this content.";
+            //     setTimeout(function () {
+            //       // Replace 'your_new_url' with the actual URL where you want to navigate
+            //       window.location.href = '/';
+            //     }, 3000);
+            // }
         }
         function closePopup() {
             // Close the popup
