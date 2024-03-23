@@ -1,41 +1,36 @@
-// On Scroll Load More Products From Ajax.
-  var currentPage = 1;
-  var productsPerPage = 12;
-  var isLoading = false;
-
-  // Function to fetch products via AJAX
-  function fetchProducts(page) {
-    isLoading = true;
-    document.getElementById('loader').style.display = 'block';
-    var collectionUrl = window.location.pathname;
-    $.ajax({
-      url: collectionUrl+'?page=' + page,
-      method: 'GET',
-      success: function(data) {
-        //$('#product-container').append(data);
-        isLoading = false;
-        document.getElementById('loader').style.display = 'none';
-      },
-      error: function() {
-        isLoading = false;
-        document.getElementById('loader').style.display = 'none';
-        // Handle error if AJAX request fails
-      }
-    });
-  }
-
-  // Function to check if the user has scrolled to the bottom of the page
-  function isBottomOfPage() {
-    return $(window).scrollTop() + $(window).height() >= $(document).height();
-  }
-
-  // Event listener for scrolling
-  $(window).scroll(function() {
-    if (!isLoading && isBottomOfPage()) {
-      currentPage++;
-      fetchProducts(currentPage);
+let triggered = false;
+function ScrollExecute() {
+    var moreButon = $('#more').last();
+    var nextUrl = moreButon.find('a').attr("href");
+    if (screenVisibility(moreButon) && (triggered == false)) {
+        triggered = true;
+        $.ajax({
+                url: nextUrl,
+                type: 'GET',
+                beforeSend: function() {
+                    moreButon.find('.load').removeClass('hidden');
+                }
+            })
+            .done(function(data) {
+                moreButon.remove();
+                var e = document.createElement('div');
+                e.innerHTML = $(data).find('#CollectionProductsContainer').html();
+                updateGridView(e)
+                $('[data-collection-products]').append(e.querySelector('[data-collection-products]').innerHTML);
+                productVariants();
+                gridPickUpAvailability();
+                productHoverSlider();
+                if(animationStatus){
+                  if (AOS) { 
+                    AOS.refreshHard() 
+                  }
+                }
+                triggered = false
+            });
     }
-  });
-
-  // Initial load
-  fetchProducts(currentPage);
+}
+$(document).ready(function() {
+    $(window).scroll(function() {
+        ScrollExecute();
+    });
+});
