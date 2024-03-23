@@ -6,7 +6,7 @@
     <div class="revie-parent">
       <h2 class="text-center section-title">{{ section.settings.title }}</h2>
       <div class="below-reviews owl-carousel" id="reviewSection"> 
-        {% for block in section.blocks %}
+        {% for block in section.blocks limit: section.settings.show_item %}
           <div class="item reviewsItems">
             <div class="blw-data">
             <div class="rating--area">
