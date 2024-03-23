@@ -18,6 +18,7 @@ function fetchProducts(page) {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
         // Append fetched products to the container
+        console.log('HTML',xhr.responseText);
         document.getElementById('product-container').innerHTML += xhr.responseText;
         isLoading = false;
         document.getElementById('loader').style.display = 'none';
