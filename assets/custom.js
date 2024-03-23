@@ -5,7 +5,7 @@ var isLoading = false;
 
 // Function to fetch products via AJAX
 function fetchProducts(page) {
-  console.log('currentPage',currentPage,window.location.pathname);
+  var currentCollectionUrl = window.location.pathname;
   isLoading = true;
   document.getElementById('loader').style.display = 'block';
 
@@ -13,7 +13,7 @@ function fetchProducts(page) {
   // Example: Replace this with your actual AJAX call to fetch products
   // Make sure to update the URL to your actual Shopify endpoint
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', '/collections/your-collection-handle?page=' + page, true);
+  xhr.open('GET', currentCollectionUrl+'?page=' + page, true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       if (xhr.status === 200) {
