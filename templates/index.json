@@ -160,8 +160,8 @@
         "review-heading": "",
         "star_color": "#01aa0a",
         "show_item": 3,
-        "arrow": false,
-        "dots": false
+        "arrow": true,
+        "dots": true
       }
     }
   },
