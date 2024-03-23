@@ -172,7 +172,7 @@
               {% if section.settings.pagination_type == 'pages' %}
               {% render 'pagination', paginate: paginate, anchor: '' %}
               {% else %}
-                {% render 'pagination', paginate: paginate, anchor: '' %}
+                {% render 'infinite', paginate: paginate, anchor: '' %}
               {% endif %}
             {%- endif -%} 
           </div>
