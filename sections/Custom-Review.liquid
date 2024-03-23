@@ -1,0 +1,185 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.3/assets/owl.carousel.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div class="custom-reviews static">
+  <div class="page-width">
+    <div class="revie-parent">
+      <h2 class="text-center section-title">{{ section.settings.title }}</h2>
+      <div class="below-reviews owl-carousel" id="reviewSection"> 
+        {% for block in section.blocks %}
+          <div class="item reviewsItems">
+            <div class="blw-data">
+            <div class="rating--area">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url }}" height="" width="" />
+              {% endif %}
+              <div class="ratnmbr" style="color:{{ section.settings.star_color }};"> 
+                  {% assign rating = block.settings.sizes | plus:0 %}
+                  {% for i in (1..rating) %}
+                    <i class="fa fa-star"></i>
+                  {% endfor %}
+                  {% if rating != 5 %}
+                    {% assign blankstar = 5 | minus: rating  %}
+                    {% for i in (1..blankstar) %}
+                      <i class="fa fa-star-o"></i>
+                    {% endfor %}
+                  {% endif %}
+              </div>
+              <p>{{ block.settings.paragraph }}</p>
+            </div>
+            <h3 class="testimonial_title">{{ block.settings.title }}</h3>
+            <div class="footerReviews">
+              {{ block.settings.customerName }}
+            </div>
+          </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>  
+ 
+<script>
+  var item = '{{ section.settings.show_item }}';
+  var arrow = '{{ section.settings.arrow }}';
+  var dots = '{{ section.settings.dots }}';
+  jQuery("#reviewSection").owlCarousel({
+      loop: true,
+      margin: 30,
+      dots: dots,
+      nav: arrow,
+      items: item,
+    });
+</script>
+
+{% schema %}
+  {
+    "name": "Customer review",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "BG Image"
+      },
+      {
+        "type": "text",
+        "id": "totalReview",
+        "label": "Review count"
+      },
+        {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color for this Section",
+        "default": "#000000"
+      },
+      {
+        "type": "text",
+        "id": "review-heading",
+        "label": "Review count heading"
+      },
+      {
+        "type": "color",
+        "id": "star_color",
+        "label": "Star color",
+        "default": "#01aa0a"
+      },
+      {
+        "type": "range",
+        "id": "show_item",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 4,
+        "label": "Review item to show"
+      },
+      {
+        "type": "header",
+        "content": "Review Slider Settings."
+      },
+      {
+        "type": "checkbox",
+        "id": "arrow",
+        "label": "Enable Slider Arrow"
+      },
+      {
+        "type": "checkbox",
+        "id": "dots",
+        "label": "Enable Slider Pagination"
+      }
+    ],
+    "blocks": [
+       {
+         "name": "Review",
+         "type": "add-review",
+         "settings": [
+            {
+             "type": "image_picker",
+             "id": "image",
+             "label": "Image"
+           },
+            {
+             "type": "text",
+             "id": "title",
+             "label": "Title"
+           },
+           {
+             "type": "richtext",
+             "id": "paragraph",
+             "label": "Paragraph"
+           },
+           {
+             "type": "richtext", 
+             "id": "customerName",
+             "label": "Customer name"
+            },
+           {
+              "type": "select",
+              "id": "sizes",
+              "label": "Select number of stars", 
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ],
+              "default": "5"
+            }
+         ]
+       }
+    ],
+    "presets": [
+      {
+        "name": "Customer review"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
