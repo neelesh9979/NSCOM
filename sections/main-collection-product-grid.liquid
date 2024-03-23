@@ -169,7 +169,11 @@
               {%- endfor -%}
             </ul>
             {%- if paginate.pages > 1 -%}
+              {% if section.settings.pagination_type == 'pages' %}
               {% render 'pagination', paginate: paginate, anchor: '' %}
+              {% else %}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              {% endif %}
             {%- endif -%} 
           </div>
         {%- endif -%}
