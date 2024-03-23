@@ -1,3 +1,4 @@
+// infinate product scrolling on the collection page 
 let triggered = false;
 function ScrollExecute() {
     var moreButon = $('#more').last();
