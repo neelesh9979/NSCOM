@@ -15,9 +15,9 @@ function ScrollExecute() {
                 moreButon.remove();
                 var e = document.createElement('div');
                 e.innerHTML = $(data).find('#product-grid').html();
-                console.log('Load More',e.innerHTML);
+                //console.log('Load More',e.innerHTML);
                 //updateGridView(e)
-                //$('[data-collection-products]').append(e.querySelector('[data-collection-products]').innerHTML);
+                $('#product-grid').append(e.innerHTML);
                 // productVariants();
                 // gridPickUpAvailability();
                 // productHoverSlider();
