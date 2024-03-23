@@ -5,7 +5,7 @@ var isLoading = false;
 
 // Function to fetch products via AJAX
 function fetchProducts(page) {
-  console.log('currentPage',currentPage);
+  console.log('currentPage',currentPage,window.location.path);
   isLoading = true;
   document.getElementById('loader').style.display = 'block';
 
