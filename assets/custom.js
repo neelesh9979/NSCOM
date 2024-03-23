@@ -5,6 +5,7 @@
 
   // Function to fetch products via AJAX
   function fetchProducts(page) {
+    console.log('currentPage',currentPage);
     isLoading = true;
     document.getElementById('loader').style.display = 'block';
 
