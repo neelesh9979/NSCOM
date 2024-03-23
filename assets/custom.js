@@ -1,9 +1,8 @@
 let triggered = false;
 function ScrollExecute() {
     var moreButon = $('#more').last();
-  console.log('moreButon',moreButon);
     var nextUrl = moreButon.find('a').attr("href");
-    if (screenVisibility(moreButon) && (triggered == false)) {
+    if (moreButon.length > 0 && (triggered == false)) {
         triggered = true;
         $.ajax({
                 url: nextUrl,
