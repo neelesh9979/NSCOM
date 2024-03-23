@@ -15,16 +15,16 @@ function ScrollExecute() {
                 moreButon.remove();
                 var e = document.createElement('div');
                 e.innerHTML = $(data).find('#CollectionProductsContainer').html();
-                updateGridView(e)
+                //updateGridView(e)
                 $('[data-collection-products]').append(e.querySelector('[data-collection-products]').innerHTML);
-                productVariants();
-                gridPickUpAvailability();
-                productHoverSlider();
-                if(animationStatus){
-                  if (AOS) { 
-                    AOS.refreshHard() 
-                  }
-                }
+                // productVariants();
+                // gridPickUpAvailability();
+                // productHoverSlider();
+                // if(animationStatus){
+                //   if (AOS) { 
+                //     AOS.refreshHard() 
+                //   }
+                // }
                 triggered = false
             });
     }
