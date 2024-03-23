@@ -159,7 +159,9 @@
         "text_color": "#000000",
         "review-heading": "",
         "star_color": "#01aa0a",
-        "show_item": 1
+        "show_item": 4,
+        "arrow": false,
+        "dots": false
       }
     }
   },
