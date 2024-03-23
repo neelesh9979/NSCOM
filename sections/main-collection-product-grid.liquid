@@ -168,13 +168,9 @@
                 </li>
               {%- endfor -%}
             </ul>
-            <div id="loader" style="display: none;">
-              <!-- Loader HTML (e.g., spinner, loading text, etc.) -->
-              Loading...
-            </div>
-           {% comment %} {%- if paginate.pages > 1 -%}
+            {%- if paginate.pages > 1 -%}
               {% render 'pagination', paginate: paginate, anchor: '' %}
-            {%- endif -%} {% endcomment %}
+            {%- endif -%} 
           </div>
         {%- endif -%}
       </div>
