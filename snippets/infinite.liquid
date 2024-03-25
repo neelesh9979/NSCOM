@@ -1,7 +1,7 @@
 {% if paginate.next %}
   <div id="more" style="width:100%">
     <a href="{{ paginate.next.url }}" aria-label="{{ 'accessibility.loading' | t }}"></a>
-    <div class="load hidden" data-page="{{ paginate.pages }}" data-currentpage="{{ paginate.current_page }}">
+    <div class="load hidden" data-page="{{ paginate.pages }}" data-currentpage="{{ paginate.next }}">
       <svg
         width="50"
         height="50"
