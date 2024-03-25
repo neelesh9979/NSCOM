@@ -11,8 +11,8 @@
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
+        "products_per_page": 8,
+        "columns_desktop": 2,
         "color_scheme": "scheme-1",
         "pagination_type": "infinite",
         "image_ratio": "adapt",
