@@ -15,6 +15,8 @@ function ScrollExecute() {
             .done(function(data) {
                 moreButon.remove();
                 var e = document.createElement('div');
+                var nextPage = $(data).find('#more').html();
+                console.log('nextPage',nextPage);
                 e.innerHTML = $(data).find('#product-grid').html();
                 $('#product-grid').append(e.innerHTML);
                 triggered = false
