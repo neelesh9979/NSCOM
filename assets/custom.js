@@ -13,7 +13,7 @@ function ScrollExecute() {
                 }
             })
             .done(function(data) {
-                moreButon.remove();
+                //moreButon.remove();
                 var e = document.createElement('div');
                 var nextPage = $(data).find('#more').html();
                 e.innerHTML = $(data).find('#product-grid').html();
