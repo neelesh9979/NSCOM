@@ -39,6 +39,52 @@
         "show_text_below": false
       }
     },
+    "collection_grid_RRWrJG": {
+      "type": "collection-grid",
+      "blocks": {
+        "left_block_YzVBfN": {
+          "type": "left_block",
+          "settings": {
+            "title": "Where can I get some?",
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/apparel-tops",
+            "image": "shopify:\/\/shop_images\/marray.jpg",
+            "image_link": "shopify:\/\/collections\/apparel-tops"
+          }
+        },
+        "center_block_EVcTtq": {
+          "type": "center_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marray.jpg",
+            "link": "shopify:\/\/collections\/bras"
+          }
+        },
+        "right_block_JBcHg4": {
+          "type": "right_block",
+          "settings": {
+            "title": "Where can I get some?",
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/innerwear-tops",
+            "image": "shopify:\/\/shop_images\/marray.jpg",
+            "image_link": "shopify:\/\/collections\/innerwear-tops"
+          }
+        }
+      },
+      "block_order": [
+        "left_block_YzVBfN",
+        "center_block_EVcTtq",
+        "right_block_JBcHg4"
+      ],
+      "settings": {
+        "heading": "",
+        "short_text": "",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "color_scheme": ""
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -167,6 +213,7 @@
   },
   "order": [
     "image_banner",
+    "collection_grid_RRWrJG",
     "featured_collection",
     "custom_review_TJXjYC"
   ]
