@@ -13,11 +13,16 @@ function ScrollExecute() {
                 }
             })
             .done(function(data) {
-                //moreButon.remove();
                 var e = document.createElement('div');
                 var nextPage = $(data).find('#more').html();
                 e.innerHTML = $(data).find('#product-grid').html();
-                $('#more').html(nextPage);
+                var lastPage = $('#more .load').data('page');
+                var currentPage = $('#more .load').data('currentpage');
+                if(currentPage == lastPage){
+                  moreButon.remove();
+                }else{
+                  $('#more').html(nextPage);
+                }
                 $('#product-grid').append(e.innerHTML);
                 triggered = false
             });
