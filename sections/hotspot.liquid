@@ -15,7 +15,7 @@
     {%- assign spotProduct = block.settings.product -%}
       <div class="yv-spotlight-container">
         <div id="yv-spotlight-item-{{ block.id }}" class="yv-spotlight-item{% if block.type == 'media_with_text' %} spotlight-media-item{% endif %}">
-            <button aria-label="Spot {{ forloop.index }}" class="yv-spotlight-dot yv-spotlight-hover{% if block.type == 'spot' %} d-none d-md-block{% endif %}"></button>
+            <!-- <button aria-label="Spot {{ forloop.index }}" class="yv-spotlight-dot yv-spotlight-hover{% if block.type == 'spot' %} d-none d-md-block{% endif %}"></button> -->
             {% if block.type == 'spot' %}
               <button aria-label="Spot {{ forloop.index }}" class="yv-spotlight-dot d-block d-md-none{% if spotProduct != blank %} quickView{% endif %}"{% if spotProduct != blank %} data-href="{{ spotProduct.url }}"{% endif %}></button>
             {% endif %}
