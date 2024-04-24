@@ -82,6 +82,43 @@
         "divider": false
       }
     },
+    "hotspot_3naj3p": {
+      "type": "hotspot",
+      "blocks": {
+        "hotspot_NDWGKU": {
+          "type": "hotspot",
+          "settings": {
+            "y_axis": -23,
+            "x_axis": 19,
+            "hotspot_product": "antique-drawers"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_NDWGKU"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/putting-on-your-shoes_925x_aceefe9c-42db-4552-955e-e0071c2ce104.jpg",
+        "heading": "",
+        "subheading": "",
+        "button_label": "",
+        "image-position": "image_second",
+        "container": "container",
+        "color_heading": "#232323",
+        "button_color": "#fff",
+        "button_border": "#232323",
+        "button_background": "#232323",
+        "button_color_hover": "#fff",
+        "button_border_hover": "#232323",
+        "button_background_hover": "#232323",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
+      }
+    },
     "collection_grid_RRWrJG": {
       "type": "collection-grid",
       "blocks": {
@@ -257,6 +294,7 @@
   "order": [
     "image_banner",
     "circle_collection_list_YMYpAL",
+    "hotspot_3naj3p",
     "collection_grid_RRWrJG",
     "featured_collection",
     "custom_review_TJXjYC"
