@@ -444,7 +444,7 @@
     max-width: 350px;
     display: flex;
     align-items: center;
-    background: var(--primaryColorBody);
+    background: #fff;
     padding: 10px;
     visibility: hidden;
     opacity: 0;
@@ -494,8 +494,8 @@
 .yv-spotlight-product-title {
     line-height: 1.3;
     margin-bottom: 3px;
-    color: var(--colorTextBody);
-    font-size: var(--smallText);
+    margin-top: 0;
+    font-size: 12px;
 }
 
 .yv-spotlight-product-title a {
@@ -504,9 +504,11 @@
 }
 
 .yv-spotlight-product-price {
-    font-weight: 700
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    line-height: 24px;
 }
-
 .yv-spotlight-element-inner {
     display: flex;
 }
@@ -536,7 +538,22 @@
     /* margin-bottom: 5px; */
     text-transform: var(--variantTextTransform);
 }
-
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.yv-spotlight-product-content form {
+    text-align: left;
+    line-height: initial;
+}
+.yv-spotlight-product-content form button {
+    padding: 0;
+}    
+.yv-spotlight-product-media  .image-wrapper {
+    padding: 0 !important;
+    height: 100%;
+}    
 
 @media (min-width:768px) {
     .yv-spotlight-item:hover .yv-spotlight-element {
