@@ -17,7 +17,7 @@
         <div id="yv-spotlight-item-{{ block.id }}" class="yv-spotlight-item{% if block.type == 'media_with_text' %} spotlight-media-item{% endif %}">
             <button aria-label="Spot {{ forloop.index }}" class="yv-spotlight-dot yv-spotlight-hover{% if block.type == 'spot' %} d-none d-md-block{% endif %}"></button>
             {% if block.type == 'spot' %}
-              <button aria-label="Spot {{ forloop.index }} class="yv-spotlight-dot d-block d-md-none{% if spotProduct != blank %} quickView{% endif %}"{% if spotProduct != blank %} data-href="{{ spotProduct.url }}"{% endif %}></button>
+              <button aria-label="Spot {{ forloop.index }}" class="yv-spotlight-dot d-block d-md-none{% if spotProduct != blank %} quickView{% endif %}"{% if spotProduct != blank %} data-href="{{ spotProduct.url }}"{% endif %}></button>
             {% endif %}
           <div class="yv-spotlight-element{% if block.settings.horizontal > 60 %} left{% else %} right{% endif %}" style="--layoutRadius:{% if section.settings.enable_fullwidth == false and settings.layout_style == 'rounded' %}10px{% else %}0px{% endif %}">
             <div class="yv-spotlight-element-inner{% if block.settings.product_layout == 'vertical' or block.type == 'media_with_text' %}  media-top{% endif %}">
