@@ -88,10 +88,10 @@
         "spot_Vnt63c": {
           "type": "spot",
           "settings": {
-            "product": "",
+            "product": "antique-drawers",
             "product_layout": "horizontal",
-            "horizontal": 10,
-            "vertical": 10,
+            "horizontal": 33,
+            "vertical": 21,
             "spot_color": "#000000"
           }
         }
