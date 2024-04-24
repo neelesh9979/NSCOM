@@ -39,6 +39,49 @@
         "show_text_below": false
       }
     },
+    "circle_collection_list_YMYpAL": {
+      "type": "circle-collection-list",
+      "blocks": {
+        "collection_list_cDqczU": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "apparel-tops",
+            "title": ""
+          }
+        },
+        "collection_list_64KdeU": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "bras",
+            "title": ""
+          }
+        },
+        "collection_list_XQweHp": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "innerwear-tops",
+            "title": ""
+          }
+        },
+        "collection_list_FqeNnM": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "apparel-tops",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_cDqczU",
+        "collection_list_64KdeU",
+        "collection_list_XQweHp",
+        "collection_list_FqeNnM"
+      ],
+      "settings": {
+        "title": "",
+        "divider": false
+      }
+    },
     "collection_grid_RRWrJG": {
       "type": "collection-grid",
       "blocks": {
@@ -213,6 +256,7 @@
   },
   "order": [
     "image_banner",
+    "circle_collection_list_YMYpAL",
     "collection_grid_RRWrJG",
     "featured_collection",
     "custom_review_TJXjYC"
