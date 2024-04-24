@@ -536,6 +536,15 @@
     /* margin-bottom: 5px; */
     text-transform: var(--variantTextTransform);
 }
+
+
+@media (min-width:768px) {
+    .yv-spotlight-item:hover .yv-spotlight-element {
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1) translateY(-50%);
+    }
+  }
   {% endstylesheet %}
   
   {% javascript %}
