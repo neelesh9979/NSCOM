@@ -1,7 +1,8 @@
 {% style %}
-    .collection-list-outer{
-      padding-bottom:12px;
-    }
+  .circle-collection {
+    padding-top: {{ section.settings.padding_top}}px !important;
+    padding-bottom: {{ section.settings.padding_bottom }}px !important;
+  }
     ul.collection-list {
         display: flex;
         list-style: none;
@@ -88,7 +89,6 @@
       }
     }
 {% endstyle %}
-
 <div class="page-width" data-aos="logo__animation">
   {%- if section.settings.title != blank -%}
     <div class="section-header">
@@ -138,7 +138,7 @@
 {% schema %}
   {
   "name": "Custom Collection List",
-  "class": "section collection-list-outer",
+  "class": "section collection-list-outer circle-collection",
   "max_blocks": 8,
   "tag": "section",
   "settings": [
@@ -146,7 +146,29 @@
       "type": "text",
       "id": "title",
       "label": "Title"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 16
     }
+
+
   ],
   "blocks": [
     {
