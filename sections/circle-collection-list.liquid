@@ -88,7 +88,7 @@
       }
     }
 {% endstyle %}
-{%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
+
 <div class="page-width" data-aos="logo__animation">
   {%- if section.settings.title != blank -%}
     <div class="section-header">
@@ -135,7 +135,6 @@
     </div>
   {% endif %}
 </div>
-{%- if section.settings.divider -%}</div>{%- endif -%}
 {% schema %}
   {
   "name": "Custom Collection List",
@@ -147,12 +146,6 @@
       "type": "text",
       "id": "title",
       "label": "Title"
-    },
-     {
-      "type": "checkbox",
-      "id": "divider",
-      "label": "t:sections.logo-list.settings.divider.label",
-      "default": false
     }
   ],
   "blocks": [
