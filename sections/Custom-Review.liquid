@@ -1,18 +1,17 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.3/assets/owl.carousel.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div class="custom-reviews static">
-  <div class="page-width">
     <div class="revie-parent">
-      <h2 class="text-center section-title">{{ section.settings.title }}</h2>
+      <div class="top-head centr">
+        <h3>{{ section.settings.title }}</h3>
+        <h3>
+          <span style="color:{{ section.settings.text_color }};">{{ section.settings.totalReview }}</span>
+          <span>{{ section.settings.review-heading }}</span>
+        </h3>
+      </div>
       <div class="below-reviews owl-carousel" id="reviewSection"> 
         {% for block in section.blocks %}
           <div class="item reviewsItems">
             <div class="blw-data">
-            <div class="rating--area">
-              {% if block.settings.image != blank %}
-                <img src="{{ block.settings.image | image_url }}" height="" width="" />
-              {% endif %}
+            <div class="rating--area"> 
               <div class="ratnmbr" style="color:{{ section.settings.star_color }};"> 
                   {% assign rating = block.settings.sizes | plus:0 %}
                   {% for i in (1..rating) %}
@@ -25,9 +24,9 @@
                     {% endfor %}
                   {% endif %}
               </div>
-              <p>{{ block.settings.paragraph }}</p>
+              <div class="abtrate">{{ block.settings.title }}</div>
             </div>
-            <h3 class="testimonial_title">{{ block.settings.title }}</h3>
+            {{ block.settings.paragraph }}
             <div class="footerReviews">
               {{ block.settings.customerName }}
             </div>
@@ -36,8 +35,43 @@
         {% endfor %}
       </div>
     </div>
-  </div>
 </div>
+
+
+          
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>  
+ 
+<script>
+  jQuery("#reviewSection").owlCarousel({
+      loop: true,
+      lazyLoad: true,
+      margin: 40,
+      responsiveClass: true,
+      autoHeight: true,
+      smartSpeed: 800,
+      items: 3,
+      nav: true,
+      center: true,
+      responsive: {
+      0: {
+        items: 1
+      },
+  
+      600: {
+        items: 1
+      },
+  
+      1024: {
+        items: 3
+      },
+  
+      1366: {
+        items: 3
+      }
+    }
+    });
+</script>
 <style>
   /* =============== review section css start here ================== */
 .revie-parent {
@@ -131,21 +165,6 @@
 .owl-carousel,.owl-carousel .owl-item{-webkit-tap-highlight-color:transparent;position:relative}.owl-carousel{display:none;width:100%;z-index:1}.owl-carousel .owl-stage{position:relative;-ms-touch-action:pan-Y;touch-action:manipulation;-moz-backface-visibility:hidden}.owl-carousel .owl-stage:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}.owl-carousel .owl-stage-outer{position:relative;overflow:hidden;-webkit-transform:translate3d(0,0,0)}.owl-carousel .owl-item,.owl-carousel .owl-wrapper{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-webkit-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0)}.owl-carousel .owl-item{min-height:1px;float:left;-webkit-backface-visibility:hidden;-webkit-touch-callout:none}.owl-carousel .owl-item img{display:block;width:100%}.owl-carousel .owl-dots.disabled,.owl-carousel .owl-nav.disabled{display:none}.no-js .owl-carousel,.owl-carousel.owl-loaded{display:block}.owl-carousel .owl-dot,.owl-carousel .owl-nav .owl-next,.owl-carousel .owl-nav .owl-prev{cursor:pointer;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel .owl-nav button.owl-next,.owl-carousel .owl-nav button.owl-prev,.owl-carousel button.owl-dot{background:0 0;color:inherit;border:none;padding:0!important;font:inherit}.owl-carousel.owl-loading{opacity:0;display:block}.owl-carousel.owl-hidden{opacity:0}.owl-carousel.owl-refresh .owl-item{visibility:hidden}.owl-carousel.owl-drag .owl-item{-ms-touch-action:pan-y;touch-action:pan-y;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.owl-carousel.owl-grab{cursor:move;cursor:grab}.owl-carousel.owl-rtl{direction:rtl}.owl-carousel.owl-rtl .owl-item{float:right}.owl-carousel .animated{animation-duration:1s;animation-fill-mode:both}.owl-carousel .owl-animated-in{z-index:0}.owl-carousel .owl-animated-out{z-index:1}.owl-carousel .fadeOut{animation-name:fadeOut}@keyframes fadeOut{0%{opacity:1}100%{opacity:0}}.owl-height{transition:height .5s ease-in-out}.owl-carousel .owl-item .owl-lazy{opacity:0;transition:opacity .4s ease}.owl-carousel .owl-item .owl-lazy:not([src]),.owl-carousel .owl-item .owl-lazy[src^=""]{max-height:0}.owl-carousel .owl-item img.owl-lazy{transform-style:preserve-3d}.owl-carousel .owl-video-wrapper{position:relative;height:100%;background:#000}.owl-carousel .owl-video-play-icon{position:absolute;height:80px;width:80px;left:50%;top:50%;margin-left:-40px;margin-top:-40px;background:url(owl.video.play.png) no-repeat;cursor:pointer;z-index:1;-webkit-backface-visibility:hidden;transition:transform .1s ease}.owl-carousel .owl-video-play-icon:hover{-ms-transform:scale(1.3,1.3);transform:scale(1.3,1.3)}.owl-carousel .owl-video-playing .owl-video-play-icon,.owl-carousel .owl-video-playing .owl-video-tn{display:none}.owl-carousel .owl-video-tn{opacity:0;height:100%;background-position:center center;background-repeat:no-repeat;background-size:contain;transition:opacity .4s ease}.owl-carousel .owl-video-frame{position:relative;z-index:1;height:100%;width:100%}
 /* =============== review section css end here ================== */
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>  
- 
-<script>
-  var item = '{{ section.settings.show_item }}';
-  var arrow = '{{ section.settings.arrow }}';
-  var dots = '{{ section.settings.dots }}';
-  jQuery("#reviewSection").owlCarousel({
-      loop: true,
-      margin: 30,
-      dots: dots,
-      nav: arrow,
-      items: item,
-    });
-</script>
-
 {% schema %}
   {
     "name": "Customer review",
