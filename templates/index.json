@@ -39,6 +39,37 @@
         "show_text_below": false
       }
     },
+    "news_ticker_LgjQBc": {
+      "type": "news-ticker",
+      "settings": {
+        "text1": "<p>Add promotional text here<\/p>",
+        "text2": "",
+        "row1_font_family": "--font-family",
+        "row2_font_family": "--font-family",
+        "row1_direction": "left",
+        "row2_direction": "right",
+        "heading_font_size": 28,
+        "subheading_font_size": 24,
+        "heading_font_size_m": 18,
+        "subheading_font_size_m": 16,
+        "section_border": true,
+        "background_opacity": 50,
+        "min_height_desktop": 400,
+        "min_height_mobile": 200,
+        "bgcolor": "#ffffff",
+        "bg_gradient_color": "",
+        "text1color": "#000000",
+        "outlinetext1color": "#000000",
+        "text2color": "#A56748",
+        "outlinetext2color": "#A56748",
+        "background_overlay": "#000000",
+        "section_visibility": "always",
+        "top_space_desktop": 10,
+        "bottom_space_desktop": 10,
+        "top_space_mobile": 15,
+        "bottom_space_mobile": 15
+      }
+    },
     "circle_collection_list_YMYpAL": {
       "type": "circle-collection-list",
       "blocks": {
@@ -79,7 +110,8 @@
       ],
       "settings": {
         "title": "",
-        "divider": false
+        "padding_top": 16,
+        "padding_bottom": 16
       }
     },
     "hotspot_3naj3p": {
@@ -284,6 +316,7 @@
   },
   "order": [
     "image_banner",
+    "news_ticker_LgjQBc",
     "circle_collection_list_YMYpAL",
     "hotspot_3naj3p",
     "collection_grid_RRWrJG",
