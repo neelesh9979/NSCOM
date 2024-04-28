@@ -45,59 +45,14 @@
         "image_zKNL4K": {
           "type": "image",
           "settings": {
-            "heading": "Heading",
-            "subheading": "Sub heading",
-            "link": ""
-          }
-        },
-        "image_h6PCBR": {
-          "type": "image",
-          "settings": {
-            "heading": "Heading",
-            "subheading": "Sub heading",
-            "link": ""
-          }
-        },
-        "image_6q9ctc": {
-          "type": "image",
-          "settings": {
-            "heading": "Heading",
-            "subheading": "Sub heading",
-            "link": ""
-          }
-        },
-        "image_Mh8VXc": {
-          "type": "image",
-          "settings": {
-            "heading": "Heading",
-            "subheading": "Sub heading",
-            "link": ""
-          }
-        },
-        "image_KECXGk": {
-          "type": "image",
-          "settings": {
-            "heading": "Heading",
-            "subheading": "Sub heading",
-            "link": ""
-          }
-        },
-        "image_VytUmi": {
-          "type": "image",
-          "settings": {
-            "heading": "Heading",
+            "heading": "",
             "subheading": "Sub heading",
             "link": ""
           }
         }
       },
       "block_order": [
-        "image_zKNL4K",
-        "image_h6PCBR",
-        "image_6q9ctc",
-        "image_Mh8VXc",
-        "image_KECXGk",
-        "image_VytUmi"
+        "image_zKNL4K"
       ],
       "settings": {
         "enable_fullwidth": true,
