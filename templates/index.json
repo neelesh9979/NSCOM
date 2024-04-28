@@ -39,6 +39,155 @@
         "show_text_below": false
       }
     },
+    "news_ticker_LgjQBc": {
+      "type": "news-ticker",
+      "settings": {
+        "text1": "<p>Add promotional text here<\/p>",
+        "text2": "",
+        "row1_font_family": "--font-family",
+        "row2_font_family": "--font-family",
+        "row1_direction": "left",
+        "row2_direction": "right",
+        "heading_font_size": 28,
+        "subheading_font_size": 24,
+        "heading_font_size_m": 18,
+        "subheading_font_size_m": 16,
+        "section_border": true,
+        "background_opacity": 50,
+        "min_height_desktop": 400,
+        "min_height_mobile": 200,
+        "bgcolor": "#ffffff",
+        "bg_gradient_color": "",
+        "text1color": "#000000",
+        "outlinetext1color": "#000000",
+        "text2color": "#A56748",
+        "outlinetext2color": "#A56748",
+        "background_overlay": "#000000",
+        "section_visibility": "always",
+        "top_space_desktop": 10,
+        "bottom_space_desktop": 10,
+        "top_space_mobile": 15,
+        "bottom_space_mobile": 15
+      }
+    },
+    "circle_collection_list_YMYpAL": {
+      "type": "circle-collection-list",
+      "blocks": {
+        "collection_list_cDqczU": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "apparel-tops",
+            "title": ""
+          }
+        },
+        "collection_list_64KdeU": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "bras",
+            "title": ""
+          }
+        },
+        "collection_list_XQweHp": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "innerwear-tops",
+            "title": ""
+          }
+        },
+        "collection_list_FqeNnM": {
+          "type": "collection_list",
+          "settings": {
+            "collection": "apparel-tops",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_list_cDqczU",
+        "collection_list_64KdeU",
+        "collection_list_XQweHp",
+        "collection_list_FqeNnM"
+      ],
+      "settings": {
+        "title": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "hotspot_3naj3p": {
+      "type": "hotspot",
+      "blocks": {
+        "spot_Vnt63c": {
+          "type": "spot",
+          "settings": {
+            "product": "antique-drawers",
+            "product_layout": "horizontal",
+            "horizontal": 33,
+            "vertical": 21,
+            "spot_color": "#f5f5f5"
+          }
+        }
+      },
+      "block_order": [
+        "spot_Vnt63c"
+      ],
+      "settings": {
+        "enable_fullwidth": true,
+        "image": "shopify:\/\/shop_images\/putting-on-your-shoes_925x_aceefe9c-42db-4552-955e-e0071c2ce104.jpg",
+        "bgcolor": "primary",
+        "section_visibility": "always",
+        "top_space_desktop": 0,
+        "bottom_space_desktop": 0,
+        "top_space_mobile": 0,
+        "bottom_space_mobile": 0
+      }
+    },
+    "collection_grid_RRWrJG": {
+      "type": "collection-grid",
+      "blocks": {
+        "left_block_YzVBfN": {
+          "type": "left_block",
+          "settings": {
+            "title": "Where can I get some?",
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/apparel-tops",
+            "image": "shopify:\/\/shop_images\/marray.jpg",
+            "image_link": "shopify:\/\/collections\/apparel-tops"
+          }
+        },
+        "center_block_EVcTtq": {
+          "type": "center_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/marray.jpg",
+            "link": "shopify:\/\/collections\/bras"
+          }
+        },
+        "right_block_JBcHg4": {
+          "type": "right_block",
+          "settings": {
+            "title": "Where can I get some?",
+            "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
+            "button_text": "Shop Now",
+            "button_link": "shopify:\/\/collections\/innerwear-tops",
+            "image": "shopify:\/\/shop_images\/marray.jpg",
+            "image_link": "shopify:\/\/collections\/innerwear-tops"
+          }
+        }
+      },
+      "block_order": [
+        "left_block_YzVBfN",
+        "center_block_EVcTtq",
+        "right_block_JBcHg4"
+      ],
+      "settings": {
+        "heading": "",
+        "short_text": "",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "color_scheme": "scheme-1"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -167,6 +316,10 @@
   },
   "order": [
     "image_banner",
+    "news_ticker_LgjQBc",
+    "circle_collection_list_YMYpAL",
+    "hotspot_3naj3p",
+    "collection_grid_RRWrJG",
     "featured_collection",
     "custom_review_TJXjYC"
   ]

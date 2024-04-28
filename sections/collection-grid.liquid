@@ -1,0 +1,250 @@
+{{ 'collection-grid.css' | asset_url | stylesheet_tag: preload: true }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="category-grid color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="category">
+      <div class="category__header">
+        {% if section.settings.heading != blank %}
+          <h2 class="category__title h1">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.short_text != blank %}
+          <p class="category__sub-title">
+            {{ section.settings.short_text }}
+          </p>
+        {% endif %}
+      </div>
+      {% if section.blocks.size > 0 %}
+        <div class="category__grid">
+          <ul class="category__list">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'left_block' -%}
+                  <li class="category__list-item category__list-item--2-col">
+                    <div class="category__img">
+                      {%- assign image = block.settings.image -%}
+                      {% if image != blank %}
+                        <a href="{{ block.settings.image_link }}">
+                          {{ image | image_url: width: image.width | image_tag: class: 'img', loading: 'lazy' }}
+                        </a>
+                      {% endif %}
+                    </div>
+                    <div class="category__desc">
+                      <h3 class="category__desc-title h2">{{ block.settings.title }}</h3>
+                      <p class="category__desc-para">
+                        {{ block.settings.description }}
+                      </p>
+                      <a href="{{ block.settings.button_link }} " class="button button--secondary">
+                        {{- block.settings.button_text }}
+                      </a>
+                    </div>
+                  </li>
+                {%- when 'center_block' -%}
+                  <li class="category__list-item category__list-item--1-col">
+                    <div class="category__img category__img--full">
+                      {%- assign image = block.settings.image -%}
+                      {% if image != blank %}
+                        <a href="{{ block.settings.link }}">
+                          {{
+                            image
+                            | image_url: width: image.width
+                            | image_tag: class: 'img', loading: 'lazy'
+                          }}
+                        </a>
+                      {% endif %}
+                    </div>
+                  </li>
+                {%- when 'right_block' -%}
+                  <li class="category__list-item category__list-item--2-col">
+                    <div class="category__desc">
+                      <h3 class="category__desc-title h2">{{ block.settings.title }}</h3>
+                      <p class="category__desc-para">
+                        {{ block.settings.description }}
+                      </p>
+                      <a href="{{ block.settings.button_link }} " class="button button--secondary">
+                        {{- block.settings.button_text }}
+                      </a>
+                    </div>
+                    <div class="category__img">
+                      {%- assign image = block.settings.image -%}
+                      {% if image != blank %}
+                        <a href="{{ block.settings.image_link }}">
+                          {{ image | image_url: width: image.width | image_tag: class: 'img', loading: 'lazy' }}
+                        </a>
+                      {% endif %}
+                    </div>
+                  </li>
+              {%- endcase -%}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+  "name": "Collection Grid",
+  "class": "shopify-section",
+  "max_blocks": 3,
+  "tag": "section",
+    "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section general settings"
+    },
+    {
+      "type":"text",
+      "id":"heading",
+      "label":"Heading"
+    },
+    {
+      "type":"inline_richtext",
+      "id":"short_text",
+      "label":"Short Text"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color",
+      "default": "background-1"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Left Block",
+      "type": "left_block",
+      "limit":1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+         {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image Link"
+        }
+      ]
+    },
+    {
+      "name": "Center Block",
+      "type": "center_block",
+      "limit":1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "name": "Right Block",
+      "type": "right_block",
+      "limit":1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Grid"
+    }
+  ]
+}
+{% endschema %}

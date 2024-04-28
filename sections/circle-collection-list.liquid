@@ -1,0 +1,204 @@
+{% style %}
+  .circle-collection {
+    padding-top: {{ section.settings.padding_top}}px !important;
+    padding-bottom: {{ section.settings.padding_bottom }}px !important;
+  }
+    ul.collection-list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        overflow-x: auto;
+    }
+    li.collection-items {
+        width: calc(100% / 5);
+        padding: 15px;
+    }
+    .collection-box {
+        width: 100%;
+        display:block;
+        overflow: hidden;
+        border-radius: 50%;
+        position: relative;
+    }
+    li.collection-items .collection-image {
+        position: relative;
+        padding-bottom: 100%;
+        min-width: 148px;
+    }
+    .collection-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: transform 0.25s ease;
+    }
+    .circle-title-text h4 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index:2;
+        width: 100%;
+        font-size: 1.2em;
+        pointer-events: none;
+        transform: translateX(-50%) translateY(-500%);
+        color: #ffffff;
+        opacity: 0;
+        text-align: center;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        margin: 0;
+    }
+    .collection-box:hover .circle-title-text h4 {
+        transform: translateX(-50%) translateY(-60%);
+        opacity: 1;
+    }
+
+    .collection-box:hover img {
+        transform: scale(1.08);
+    }
+    .collection-box:hover:before {
+      content: '';
+      background: #00000045;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: 1;
+  }
+    /*==========================================
+    ! Medium devices (tablets, less than 992px)
+    ========================================== */
+    @media (max-width: 1024.98px){
+    	li.collection-items {
+    	    width: 100%;
+    	    min-width: 280px;
+    	}
+         .circle-title-text h4{
+           font-size:0.9em;
+         }
+        .collection-box .circle-title-text h4 {
+         transform: translateX(-50%) translateY(-60%);
+          opacity: 1;
+      }
+    }
+{% endstyle %}
+<div class="page-width" data-aos="logo__animation">
+  {%- if section.settings.title != blank -%}
+    <div class="section-header">
+      <h2 class="section-header__title">{{ section.settings.title | escape }}</h2>
+    </div>
+  {%- endif -%}
+  {%- if section.blocks.size > 0 -%}
+    <div class="collection-list-container">
+      <ul class="collection-list">
+        {%- for block in section.blocks -%}
+          {%- assign collection = block.settings.collection -%}
+          {% if block.settings.title != blank %}
+            {% assign title = block.settings.title %}
+          {% else %}
+            {% assign title = collection.title %}
+          {% endif %}
+          <li class="collection-items">
+            <a href="{{ collection.url }}" class="collection-box">
+              <div class="collection-image">
+                {%- assign collection_image = block.settings.collection_image -%}
+                {% if collection_image != blank %}
+                  {{
+                    collection_image
+                    | image_url: width: collection_image.width, height: collection_image.height
+                    | image_tag: class: 'img', loading: 'lazy'
+                  }}
+                {% else %}
+                  <img
+                    src="{{ collection.featured_image | img_url:'300x300' }}"
+                    alt="{{ collection.title }}"
+                    loading="lazy"
+                    height="auto"
+                    width="auto"
+                  >
+                {% endif %}
+              </div>
+              <div class="circle-title-text">
+                <h4>{{ title }}</h4>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
+{% schema %}
+  {
+  "name": "Custom Collection List",
+  "class": "section collection-list-outer circle-collection",
+  "max_blocks": 8,
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 16
+    }
+
+
+  ],
+  "blocks": [
+    {
+      "name": "Collection List",
+      "type": "collection_list",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image",
+          "label": "Collection Image",
+          "info": "Leave blank if you want to show collection featured media"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Leave blank if you want to show selected collection title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Collection List"
+    }
+  ]
+}
+{% endschema %}
