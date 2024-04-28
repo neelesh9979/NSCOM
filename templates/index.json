@@ -103,7 +103,7 @@
         "gallery_style": "auto-slide",
         "slide_direction": "right",
         "image_style": "circle",
-        "image_size": "xsmall",
+        "image_size": "small",
         "text_alignment": "center",
         "enable_image_animation": true,
         "image_crop": false,
