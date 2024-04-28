@@ -104,7 +104,7 @@
         "heading": "",
         "seo_heading": "h2",
         "heading_size": "h2",
-        "gallery_style": "swipe",
+        "gallery_style": "auto-slide",
         "slide_direction": "right",
         "image_style": "circle",
         "image_size": "xsmall",
