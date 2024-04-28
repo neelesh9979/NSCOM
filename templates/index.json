@@ -100,7 +100,7 @@
         "heading": "",
         "seo_heading": "h2",
         "heading_size": "h2",
-        "gallery_style": "auto-slide",
+        "gallery_style": "swipe",
         "slide_direction": "right",
         "image_style": "circle",
         "image_size": "small",
