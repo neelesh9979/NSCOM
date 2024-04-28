@@ -39,6 +39,60 @@
         "show_text_below": false
       }
     },
+    "gallery_box_carousel_B9tUMY": {
+      "type": "gallery-box-carousel",
+      "blocks": {
+        "image_zKNL4K": {
+          "type": "image",
+          "settings": {
+            "heading": "Heading",
+            "subheading": "Sub heading",
+            "link": ""
+          }
+        },
+        "image_h6PCBR": {
+          "type": "image",
+          "settings": {
+            "heading": "Heading",
+            "subheading": "Sub heading",
+            "link": ""
+          }
+        },
+        "image_6q9ctc": {
+          "type": "image",
+          "settings": {
+            "heading": "Heading",
+            "subheading": "Sub heading",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_zKNL4K",
+        "image_h6PCBR",
+        "image_6q9ctc"
+      ],
+      "settings": {
+        "enable_fullwidth": true,
+        "heading": "Add Your Heading Here",
+        "seo_heading": "h2",
+        "heading_size": "h2",
+        "gallery_style": "auto-slide",
+        "slide_direction": "right",
+        "image_style": "square",
+        "image_size": "medium",
+        "text_alignment": "center",
+        "enable_image_animation": true,
+        "image_crop": false,
+        "image_background": false,
+        "bgcolor": "primary",
+        "section_visibility": "always",
+        "top_space_desktop": 45,
+        "bottom_space_desktop": 45,
+        "top_space_mobile": 35,
+        "bottom_space_mobile": 0
+      }
+    },
     "news_ticker_LgjQBc": {
       "type": "news-ticker",
       "settings": {
@@ -60,8 +114,8 @@
         "bg_gradient_color": "",
         "text1color": "#000000",
         "outlinetext1color": "#000000",
-        "text2color": "#A56748",
-        "outlinetext2color": "#A56748",
+        "text2color": "#a56748",
+        "outlinetext2color": "#a56748",
         "background_overlay": "#000000",
         "section_visibility": "always",
         "top_space_desktop": 10,
@@ -316,6 +370,7 @@
   },
   "order": [
     "image_banner",
+    "gallery_box_carousel_B9tUMY",
     "news_ticker_LgjQBc",
     "circle_collection_list_YMYpAL",
     "hotspot_3naj3p",
