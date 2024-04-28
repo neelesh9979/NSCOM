@@ -60,6 +60,342 @@ section- gallery-carousel and common
   </div>
 </div>
 <style>
+  .gallery-section-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.yv-gallery-outer {
+    display: inline-flex;
+    padding-top: 20px;
+}
+
+.yv-gallery-style-stacked {
+    width: 100%
+}
+
+.yv-gallery-outer.yv-gallery-style-swipe {
+    width: 100%;
+    padding-bottom: 20px
+}
+
+.yv-gallery-box {
+    display: flex;
+    width: max-content;
+    will-change: transform, padding, width
+}
+
+.yv-gallery-style-stacked .yv-gallery-box {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center
+}
+
+.yv-gallery-style-auto-slide .yv-gallery-box {
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: ticker-reverse;
+    animation-duration: 27s;
+    animation-play-state: running
+}
+
+.yv-gallery-style-swipe .yv-gallery-box {
+    margin: 0 auto
+}
+
+.yv-gallery-direction-right .yv-gallery-box {
+    animation-name: ticker
+}
+
+.yv-gallery-item {
+    padding: 0 7px;
+    width: 350px
+}
+
+.yv-gallery-box.medium .yv-gallery-item {
+    width: 300px
+}
+
+.yv-gallery-box.small .yv-gallery-item {
+    width: 250px
+}
+
+.yv-gallery-box.xsmall .yv-gallery-item {
+    width: 200px
+}
+
+.yv-gallery-box.rounded .yv-gallery-item {
+    width: 280px;
+    text-align: center
+}
+
+.yv-gallery-box.rounded.medium .yv-gallery-item {
+    width: 230px
+}
+
+.yv-gallery-box.rounded.small .yv-gallery-item {
+    width: 180px
+}
+
+.yv-gallery-box.rounded.xsmall .yv-gallery-item {
+    width: 170px
+}
+
+.yv-gallery-box.no-crop .yv-gallery-item {
+    width: 200px !important
+}
+
+.yv-gallery-style-stacked .yv-gallery-item {
+    margin: 7px 0
+}
+
+.yv-gallery-img {
+    overflow: hidden;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    border-radius: var(--layoutRadius);
+    width: 100%;
+    position: relative
+}
+
+.yv-gallery-box.medium .yv-gallery-img {
+    height: 250px
+}
+
+.yv-gallery-box.small .yv-gallery-img {
+    height: 200px
+}
+
+.yv-gallery-box.xsmall .yv-gallery-img {
+    height: 140px
+}
+
+.yv-gallery-box.rounded .yv-gallery-img {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%!important;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid #d9d9d9;
+}
+
+.yv-gallery-box.rounded .yv-gallery-img img {
+    border-radius: 100%;
+}
+
+.yv-gallery-box.rounded.medium .yv-gallery-img {
+    height: 200px;
+    width: 200px
+}
+
+.yv-gallery-box.rounded.small .yv-gallery-img {
+    height: 150px;
+    width: 150px
+}
+
+.yv-gallery-box.rounded.xsmall .yv-gallery-img {
+    height: 110px;
+    width: 110px
+}
+
+.yv-gallery-box.no-crop .yv-gallery-img {
+    background-color: transparent;
+    justify-content: center;
+    height: 100% !important;
+    min-height: 120px
+}
+
+.image-background-true {
+    background: var(--colorImageBg)
+}
+
+.yv-gallery-img img {
+    transition: 1s ease all
+}
+
+.yv-gallery-outer:not(.yv-image-style-true) .yv-gallery-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--imageFocal)
+}
+
+.yv-gallery-outer.yv-image-style-true .yv-gallery-img img {
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.yv-gallery-box.no-crop .yv-gallery-img img {
+    max-width: 100%
+}
+
+.yv-gallery-detail {
+    margin-top: 10px
+}
+
+.gallery-item-title {
+    opacity: var(--colorLightTextBody)
+}
+
+.gallery-item-desc {
+    font-weight: 700
+}
+
+.yv-gallery-collage-outer.rounded:not(.space-around) {
+    border-radius: var(--layoutRadius);
+    overflow: hidden
+}
+
+.yv-gallery-collage-outer.rounded.space-around .yv-gallery-collage-img,
+.yv-gallery-collage-outer.rounded.space-around .yv-gallery-collage-item {
+    border-radius: var(--layoutRadius)
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateZ(0);
+        visibility: visible
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0)
+    }
+}
+
+@keyframes ticker-reverse {
+    0% {
+        transform: translate3d(-100%, 0, 0)
+    }
+    100% {
+        transform: translateZ(0);
+        visibility: visible
+    }
+}
+
+.yv-gallery-collage-outer.space-around .row {
+    margin-right: -var(--collage-spacing);
+    margin-left: -var(--collage-spacing);
+}
+
+.yv-gallery-collage-outer.space-around .col-12 {
+    margin-bottom: calc(var(--collage-spacing) * 2);
+    padding-right: var(--collage-spacing);
+    padding-left: var(--collage-spacing)
+}
+
+.yv-gallery-collage-outer .col-12 {
+    margin-bottom: 0
+}
+
+.yv-gallery-collage-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden
+}
+
+.yv-gallery-collage-item.hover-effect:before,
+.yv-gallery-collage-item.hover-effect:after {
+    bottom: 20px;
+    content: "";
+    left: 20px;
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    -webkit-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+    -o-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+    transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+    z-index: 1;
+}
+
+.yv-gallery-collage-item.hover-effect:before {
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    -webkit-transform: scale(0, 1);
+    -ms-transform: scale(0, 1);
+    -o-transform: scale(0, 1);
+    transform: scale(0, 1);
+}
+
+.yv-gallery-collage-item.hover-effect:after {
+    border-left: 1px solid;
+    border-right: 1px solid;
+    -webkit-transform: scale(1, 0);
+    -ms-transform: scale(1, 0);
+    -o-transform: scale(1, 0);
+    transform: scale(1, 0);
+}
+
+.yv-gallery-collage-item.hover-effect:hover:after,
+.yv-gallery-collage-item.hover-effect:hover:before {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.yv-gallery-collage-img {
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorImageBg);
+    overflow: hidden;
+    position: relative
+}
+
+.yv-gallery-collage-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+    z-index: 1;
+    object-position: var(--imageFocal)
+}
+
+.yv-gallery-collage-img .placeholder-svg {
+    height: 440px;
+    display: block
+}
+
+.yv-gallery-collage-detail {
+    position: absolute;
+    width: max-content;
+    z-index: 3;
+    max-width: calc(100% - 34px);
+    max-height: 80%;
+    padding: 0 20px;
+    overflow-y: auto
+}
+
+.yv-gallery-collage-detail .collage-heading {
+    margin-bottom: 5px
+}
+
+.text-shadow-enable .collage-heading {
+    text-shadow: 1px 1px 4px rgb(var(--text-shadow-color));
+}
+
+.yv-gallery-collage-detail .button {
+    margin-top: 12px
+}
+
+.yv-gallery-collage-img:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    background: var(--overlayColor);
+    opacity: var(--overlayOpacity)
+}
   #shopify-section-{{ section.id }}.shopify-section{
     background:var(--{{- section.settings.bgcolor -}}ColorBody);
     padding-top:{{ section.settings.top_space_desktop }}px;
