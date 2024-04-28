@@ -65,21 +65,48 @@
             "subheading": "Sub heading",
             "link": ""
           }
+        },
+        "image_Mh8VXc": {
+          "type": "image",
+          "settings": {
+            "heading": "Heading",
+            "subheading": "Sub heading",
+            "link": ""
+          }
+        },
+        "image_KECXGk": {
+          "type": "image",
+          "settings": {
+            "heading": "Heading",
+            "subheading": "Sub heading",
+            "link": ""
+          }
+        },
+        "image_VytUmi": {
+          "type": "image",
+          "settings": {
+            "heading": "Heading",
+            "subheading": "Sub heading",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "image_zKNL4K",
         "image_h6PCBR",
-        "image_6q9ctc"
+        "image_6q9ctc",
+        "image_Mh8VXc",
+        "image_KECXGk",
+        "image_VytUmi"
       ],
       "settings": {
         "enable_fullwidth": true,
-        "heading": "Add Your Heading Here",
+        "heading": "",
         "seo_heading": "h2",
         "heading_size": "h2",
-        "gallery_style": "auto-slide",
+        "gallery_style": "swipe",
         "slide_direction": "right",
-        "image_style": "square",
+        "image_style": "circle",
         "image_size": "medium",
         "text_alignment": "center",
         "enable_image_animation": true,
@@ -87,10 +114,10 @@
         "image_background": false,
         "bgcolor": "primary",
         "section_visibility": "always",
-        "top_space_desktop": 45,
-        "bottom_space_desktop": 45,
-        "top_space_mobile": 35,
-        "bottom_space_mobile": 0
+        "top_space_desktop": 5,
+        "bottom_space_desktop": 5,
+        "top_space_mobile": 5,
+        "bottom_space_mobile": 5
       }
     },
     "news_ticker_LgjQBc": {
