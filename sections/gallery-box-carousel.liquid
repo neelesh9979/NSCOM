@@ -358,6 +358,14 @@
     top: 0;
     z-index: 1;
 }
+@media (max-width:1024px) {
+  .yv-gallery-outer.yv-gallery-style-swipe:hover {
+        overflow-x: auto;
+    }
+  .yv-gallery-outer.yv-gallery-style-swipe {
+        overflow-x: auto;
+    }
+}
   #shopify-section-{{ section.id }}.shopify-section{
     background:var(--{{- section.settings.bgcolor -}}ColorBody);
     padding-top:{{ section.settings.top_space_desktop }}px;
