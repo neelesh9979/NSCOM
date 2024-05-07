@@ -1,6 +1,380 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{{ 'featured-collection-t3.css' | asset_url | stylesheet_tag: media: 'screen' }}
+
+{% liquid
+  assign swiperCount = 0
+  assign firstBlockIsActive = true
+  for i in (0..1)
+    if section.blocks[0].settings.setTabActive == false and section.blocks[1].settings.setTabActive == true
+      assign firstBlockIsActive = false
+    endif
+  endfor
+%}
+
+{%- style -%}
+  .featured-products-section#{{ section.id }} {
+    margin-top: {{ section.settings.section_margin_top }}px;
+    width: 100%;
+    height: 100%;
   }
+
+  .section-{{ section.id }}-margin {
+    margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+  }
+
+  .featured-products-section#{{ section.id }} .section-data-container {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .featured-products-section#{{ section.id }} .section-data-container {
+    padding-top: {{ section.settings.section_padding_top }}px;
+    padding-bottom: {{ section.settings.section_padding_bottom }}px;
+  }
+
+  .featured-products-section .card .media {
+    border-radius: 22px;
+  }
+
+  /* .featured-products-section .new_card_product {
+    background: {{section.settings.card_background}};
+  } */
+
+  .featured-products-section .card__information .cardProduct_type {
+    display: none;
+  }
+
+  .featured-products-section .section-data-container .section-header-container .filters-container .filter.active {
+   background-color: {{ section.settings.tab_bg_color }};
+  }
+
+  {%- for block in section.blocks limit: 1 -%}
+    .featured-products-section#{{ section.id }} .block-bg-image-container {
+      aspect-ratio: {{ block.settings.background_image_mobile.width }} / {{ block.settings.background_image_mobile.height }};
+    }
+  {%- endfor -%}
+
+  {%- for block in section.blocks limit: 1 -%}
+    .featured-products-section#{{ section.id }} .block-bg-image-container {
+      aspect-ratio: {{ block.settings.background_image_desktop.width }} / {{ block.settings.background_image_desktop.height }};
+    }
+  {%- endfor -%}
+
+  {% for block in section.blocks %}
+    .featured-products-section .swiper-{{ block.id }} .new_card_product {
+      background-color: {{ block.settings.card_background }}
+    }
+  {% endfor %}
+
+  @media only screen and (max-width: 900px) {
+    .featured-products-section#{{ section.id }} {
+      margin-top: {{ section.settings.section_margin_top_mobile }}px;
+      aspect-ratio: 35 / 69;
+      {%- for block in section.blocks limit: 1 -%}
+        aspect-ratio: {{ block.settings.background_image_mobile.width }} / {{ block.settings.background_image_mobile.height }};
+      {%- endfor -%}
+      max-height: unset;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .section-{{ section.id }}-margin {
+      margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if section.blocks.size > 1 %}
+  <div class="featured-products-section section-{{ section.id }}-margin" id="{{ section.id }}">
+    {% comment %} Background Image {% endcomment %}
+    <div class="block-bg-image-container">
+      {% for block in section.blocks %}
+        <div
+          class="bg-image-container {% if forloop.index0 == 0 and firstBlockIsActive == true %} active {% elsif forloop.index0 == 1 and firstBlockIsActive == false %} active {% endif %}"
+          data-filter="{{-forloop.index0-}}"
+        >
+          {% if block.settings.background_image_desktop != blank %}
+            {{
+              block.settings.background_image_desktop
+              | image_url: width: 1600
+              | image_tag: class: 'featured-product-slider-image desktop', loading: 'eager'
+            }}
+          {% endif %}
+          {% if block.settings.background_image_mobile != blank %}
+            {{
+              block.settings.background_image_mobile
+              | image_url: width: 425
+              | image_tag: class: 'featured-product-slider-image mobile', loading: 'eager'
+            }}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="section-data-container">
+      {% comment %} Filter Buttons {% endcomment %}
+      <div class="section-header-container page-width">
+        {% if section.blocks != empty %}
+          <div class="filters-container">
+            {% for block in section.blocks %}
+              {% assign swiperCount = swiperCount | plus: 1 %}
+              {% if block.settings.featured_products_collection != blank %}
+                <button
+                  class="filter {% if forloop.index0 == 0 and firstBlockIsActive == true %} active {% elsif forloop.index0 == 1 and firstBlockIsActive == false %} active {% endif %}"
+                  data-filter="{{-forloop.index0-}}"
+                >
+                  {{ block.settings.tab_title }}
+                </button>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} Section Data {% endcomment %}
+      {% for block in section.blocks %}
+        <div
+          data-id="swiper{{- forloop.index -}}"
+          data-filter="{{- forloop.index0 -}}"
+          class="swiper-container {% if forloop.index0 == 0 and firstBlockIsActive == true %} active {% elsif forloop.index0 == 1 and firstBlockIsActive == false %} active {% endif %}"
+        >
+          <div class="swiper swiper-{{ block.id }}">
+            <div class="swiper-wrapper">
+              {% for product in collections[block.settings.featured_products_collection].products limit: 5 %}
+                <div class="swiper-slide" style="animation-delay: {{ forloop.index0 | divided_by: 12.0 | round: 2 }}s">
+                  {% render 'card-product', card_product: product, show_quick_add: true %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="swiper-pagination {% if block.settings.pagination_color %}dark{% endif %} page-width"></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+<script>
+  (function homeFeaturedCategory () {
+    let backgrounds = document.querySelectorAll('#{{ section.id }} .bg-image-container');
+    let swipers = document.querySelectorAll('#{{ section.id }} .swiper-container');
+    let buttons = document.querySelectorAll('#{{ section.id }} .filters-container .filter');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      let swiperArr = [];
+
+      for (let i = 1; i <= {{ swiperCount }}; i++) {
+        let swiper = new Swiper(`#{{- section.id }} [data-id="swiper${i}"] .swiper`, {
+          slidesPerView: 1.85,
+          spaceBetween: 5,
+          grabCursor: true,
+          slidesOffsetAfter: 30,
+          updateOnWindowResize: true,
+          lazy: true,
+          breakpoints: {
+            300: {
+              slidesPerView: 1.85,
+              spaceBetween: 15,
+              centeredSlides: false,
+            },
+            901: {
+              slidesPerView: 'auto',
+              spaceBetween: 16,
+              centeredSlides: true,
+            },
+          },
+          pagination: {
+            el: `#{{- section.id }} [data-id="swiper${i}"] .swiper-pagination`,
+            clickable: true,
+          },
+        });
+        swiperArr.push(swiper);
+      }
+
+      buttons.forEach(button => {
+        button.addEventListener('click', event => {
+          backgrounds.forEach(el => {
+            if (event.target.getAttribute('data-filter') === el.getAttribute('data-filter')) {
+                el.classList.add('active');
+                el.classList.remove('fade-out');
+            } else {
+                el.classList.remove('active');
+                el.classList.add('fade-out');
+            }
+          })
+
+          if(!event.currentTarget.classList.contains("active")) {
+            swiperArr[event.currentTarget.getAttribute('data-filter')].slideTo(0);
+          }
+
+          swipers.forEach(el => {
+            if (event.target.getAttribute('data-filter') === el.getAttribute('data-filter')) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+          })
+
+          buttons.forEach(el => {
+            if (event.target.getAttribute('data-filter') === el.getAttribute('data-filter')) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+          })
+        })
+      })
+    }, {once: true});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Featured Collection Tab",
+  "tag": "section",
+  "class": "section section-collection-list",
+  "max_blocks": 2,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom Desktop",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom Mobile",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "section_margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section Spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Inner Spacing Top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Inner Spacing Bottom",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "section_margin_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Section Spacing",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "tab_bg_color",
+      "label": "Tab Background Color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Collection Slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "placeholder": "Men",
+          "default": "Men",
+          "label": "Filter Button Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "setTabActive",
+          "label": "Set This Block as Active",
+          "default": false
+        },
+        {
+          "type": "collection",
+          "id": "featured_products_collection",
+          "label": "Collection"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card Background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "checkbox",
+          "id": "pagination_color",
+          "label": "Dark Pagination",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Desktop Devices"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image_desktop",
+          "label": "Background Image",
+          "info": "Recommended size 1800px X 845px"
+        },
+        {
+          "type": "header",
+          "content": "Mobile Devices"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image_mobile",
+          "label": "Background Image",
+          "info": "Recommended size 380px X 700px"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Collection Tab",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
