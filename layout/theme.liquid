@@ -282,7 +282,7 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    
+     <link href="{{ 'swiper-bundle.min.css' | asset_url }}" rel="stylesheet">
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -355,5 +355,6 @@
     {% if template contains 'collection' %}
       {% render 'age-verification-popup' %}
     {% endif %}
+    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
   </body>
 </html>
