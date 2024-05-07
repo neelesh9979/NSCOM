@@ -26,6 +26,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -37,6 +38,47 @@
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
+      }
+    },
+    "collection_tab_slider_ewP7rQ": {
+      "type": "collection-tab-slider",
+      "blocks": {
+        "slide_9AGhwE": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Apparel Tops",
+            "setTabActive": true,
+            "featured_products_collection": "apparel-tops",
+            "card_background": "#ffffff",
+            "pagination_color": false,
+            "background_image_desktop": "shopify:\/\/shop_images\/young-hip-woman-at-carnival_925x_5ed9a612-68f5-4b1b-bc3c-a47f2a9739a8.jpg"
+          }
+        },
+        "slide_x63Rfp": {
+          "type": "slide",
+          "settings": {
+            "tab_title": "Innerwear Top",
+            "setTabActive": false,
+            "featured_products_collection": "innerwear-tops",
+            "card_background": "#ffffff",
+            "pagination_color": false,
+            "background_image_desktop": "shopify:\/\/shop_images\/woman-in-the-city_925x_2af3a1ea-f7d6-4df9-9c4d-46a72c1977b6.jpg",
+            "background_image_mobile": "shopify:\/\/shop_images\/woman-in-the-city_925x_2af3a1ea-f7d6-4df9-9c4d-46a72c1977b6.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_9AGhwE",
+        "slide_x63Rfp"
+      ],
+      "settings": {
+        "margin_bottom_desktop": 36,
+        "margin_bottom_mobile": 36,
+        "section_margin_top": 0,
+        "section_padding_top": 20,
+        "section_padding_bottom": 20,
+        "section_margin_top_mobile": 0,
+        "tab_bg_color": "#fff"
       }
     },
     "gallery_box_slider_LLQKJe": {
@@ -490,6 +532,7 @@
   },
   "order": [
     "image_banner",
+    "collection_tab_slider_ewP7rQ",
     "gallery_box_slider_LLQKJe",
     "gallery_box_carousel_B9tUMY",
     "news_ticker_LgjQBc",
