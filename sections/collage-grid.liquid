@@ -137,7 +137,7 @@
     z-index: 2;
 }
     #shopify-section-{{ section.id }}.shopify-section{
-      background:var(--{{- section.settings.bgcolor -}}ColorBody);
+      background:{{ section.settings.background_color }};
       padding-top:{{ section.settings.top_space_desktop }}px;
       padding-bottom:{{ section.settings.bottom_space_desktop }}px;
       --layoutRadius:{{ section.settings.image_radius_desktop }}px;
@@ -421,7 +421,14 @@
       {
         "type": "header",
         "content": "Color"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#000000"
       }
+
     ],
     "blocks": [
       {
