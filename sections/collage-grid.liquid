@@ -1,6 +1,862 @@
-{% schema %}
+{% unless section.settings.enable_fullwidth %}
+  <div class="{% if settings.layout_width == 'boxed' %}container{% else %}container-fluid{% endif %}">
+    {% endunless %}
+    <div class="yv-gallery-collage-outer {% unless section.settings.enable_fullwidth %}{% if section.settings.image_layout == 'rounded' %}rounded{% endif %}{% endunless %}
+      {% if section.settings.space_in_images %}space-around{% endif %}"> 
+      <div class="row {% unless section.settings.space_in_images %}no-gutters{% endunless %}">
+        {% for block in section.blocks %}
+          {%- liquid
+          if block.settings.desktop_content_position contains 'left'
+            assign dTextAlignment = 'd-text-left'
+          elsif block.settings.desktop_content_position contains 'right'
+            assign dTextAlignment = 'd-text-right'
+          else
+            assign dTextAlignment = 'd-text-center'
+          endif
+          if block.settings.mobile_content_position contains 'left'
+            assign mTextAlignment = 'm-text-left'
+          elsif block.settings.mobile_content_position contains 'right'
+            assign mTextAlignment = 'm-text-right'
+          else
+            assign mTextAlignment = 'm-text-center'
+          endif
+          -%}
+          <div 
+            id="collageItem-{{ block.id }}"
+            class="col-12 col-sm-12 {{ block.settings.image_width}}"
+            {{ block.shopify_attributes }}
+          >
+            
+            <{%- if block.settings.link != blank %}a href="{{ block.settings.link }}" title="{{ block.settings.heading | default:shop.name }}"{%- else %}div{%- endif %}
+              class=" yv-gallery-collage-item{% if section.settings.enable_image_animation %} image-zoom{% endif %}{% if section.settings.enable_hover_effect %} hover-effect{% endif %}"              
+              style="
+                --overlayColor:{{ block.settings.overlaycolor}};
+                --overlayOpacity: {{ block.settings.overlayopacity | times: 0.01}};
+              "
+            >
+              <div class="yv-gallery-collage-img" {% if settings.enable_animation %}data-aos="zoom-out"{% endif %}>
+                 {% if block.settings.video != blank %}    
+                    <deferred-media
+                      class="image-wrapper"
+                      style="padding-bottom:{{ 1 | divided_by : block.settings.video.aspect_ratio | times: 100 | minus : 1 }}%;position:relative"
+                    >
+                      <template style="display:none">
+                        {{ block.settings.video | video_tag:  image_size: '1100x',
+                            class: 'videoBackgroundFile', 
+                            autoplay: true,
+                            loop: true,
+                            controls: false,
+                            muted: true
+                        }}
+                      </template>
+                      <noscript>
+                        <img
+                          class="{{ class }}"
+                          src="{{ block.settings.video.preview_image | img_url: 'master' }}"
+                          alt="{{ block.settings.video.preview_image.alt | default: shop.name | strip_html }}"
+                          width="{{ block.settings.video.preview_image.width }}"
+                          height="{{ block.settings.video.preview_image.height }}"
+                        >
+                      </noscript>
+                    </deferred-media>
+                 {% else %}
+                 {% if block.settings.mobile_image != blank %}
+                  <div
+                    class="image-wrapper d-block d-md-none"
+                    style="padding-bottom:{{ 1 | divided_by : block.settings.mobile_image.aspect_ratio | times: 100  }}%"
+                  >
+                  {%- render 'lazy-image', image: block.settings.mobile_image -%}
+                  </div>
+                {% endif %}
+                {%- if block.settings.image != blank -%}
+                  <div
+                    class="image-wrapper{% if block.settings.mobile_image != blank %} d-none d-md-block{% endif %}"
+                    style="padding-bottom:{{ 1 | divided_by : block.settings.image.aspect_ratio | times: 100  }}%"
+                  >
+                  {%- render 'lazy-image', image: block.settings.image -%}
+                  </div>
+                {%- else -%}
+                  {% liquid
+                    assign placeholderClass = 'placeholder-svg'
+                    if block.settings.mobile_image != blank
+                    assign placeholderClass = 'placeholder-svg d-none d-md-block'
+                    endif
+                  %}
+                  {{ 'collection-1' | placeholder_svg_tag: placeholderClass }}
+                {%- endif -%}
+                {%- endif -%}
+              </div>
+              <div class="yv-gallery-collage-detail-wrapper"{% if settings.enable_animation %} data-aos="fade-up" data-aos-delay="200"{% endif %}>
+                <div class="yv-gallery-collage-detail{% if block.settings.enable_text_shadow and block.settings.text_shadow_color != 'rgba(0,0,0,0)' %} text-shadow-enable{% endif %} desktop-content-width-{{ block.settings.content_width }} mobile-content-width-{{ block.settings.content_width_m }} {{ block.settings.desktop_content_position }} {{ dTextAlignment }} {{ block.settings.mobile_content_position }} {{ mTextAlignment }}">
+                  {%- if block.settings.heading != blank -%}
+                    {% liquid
+                      assign headings_size = ''
+                           if block.settings.heading_size == 'none'
+                              assign headings_size = section.settings.heading_size  
+                           else  
+                              assign headings_size = block.settings.heading_size
+                           endif
+                    %}
+                    <{{ block.settings.seo_heading }} class="{{ headings_size }} collage-heading d-none d-md-block">{{ block.settings.heading }}</{{ block.settings.seo_heading }}>
+                    <{{ block.settings.seo_heading }} class="{{ block.settings.heading_size_m }} d-block d-md-none">{{ block.settings.heading }}</{{ block.settings.seo_heading }}>
+                  {%- endif -%}
+                  {%- if block.settings.subheading != blank -%}
+                    <p>{{ block.settings.subheading }}</p>
+                  {%- endif -%}
+                  
+                  {%- if block.settings.link != blank and block.settings.btn_text != blank -%}
+                    {% liquid
+                      assign btn_size = ''
+                           if block.settings.button_size == 'none'
+                              assign btn_size = section.settings.button_size  
+                           else  
+                              assign btn_size =block.settings.button_size
+                           endif
+                    %}
+                    <span href="{{ block.settings.link }}" class="button {{ btn_size }}-btn{% if block.settings.outline_button %} outline-button{% endif %} d-none d-md-inline-flex">{{ block.settings.btn_text }}</span>
+                    <span href="{{ block.settings.link }}" class="button {{ block.settings.button_size_m }}-btn{% if block.settings.outline_button %} outline-button{% endif %} d-inline-flex d-md-none">{{ block.settings.btn_text }}</span>
+                  {%- endif -%}
+                </div>
+              </div>
+            </{%- if block.settings.link != blank -%}a{%- else -%}div{%- endif -%}>
+          </div>
+              
+        {% endfor %}
+      </div>
+    </div>
+    {% unless section.settings.enable_fullwidth %}
+    </div>
+  {% endunless %}
+  <style>
+   .yv-gallery-collage-detail-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+    #shopify-section-{{ section.id }}.shopify-section{
+      background:var(--{{- section.settings.bgcolor -}}ColorBody);
+      padding-top:{{ section.settings.top_space_desktop }}px;
+      padding-bottom:{{ section.settings.bottom_space_desktop }}px;
+      --layoutRadius:{{ section.settings.image_radius_desktop }}px;
+      --collage-spacing:{{ section.settings.image_spacing_desktop }}px;
+    }
+  
+    {% for block in section.blocks %}
+      #collageItem-{{ block.id }}{
+        --text-shadow-color:{{ block.settings.text_shadow_color.red }},{{ block.settings.text_shadow_color.green }},{{ block.settings.text_shadow_color.blue }};
+        --colorBtnPrimaryText:{{ block.settings.button_text_color }};
+        --colorBtnPrimary:{{ block.settings.button_bg_color }};
+        --colorBtnPrimaryBorder:{{ block.settings.button_border_color }};
+      }
+      #collageItem-{{ block.id }} .yv-gallery-collage-detail *:not(a.button){
+          color:{{block.settings.textcolor}};
+      }
+      {% if section.settings.enable_hover_effect %}
+        #collageItem-{{ block.id }} .hover-effect:before,
+        #collageItem-{{ block.id }} .hover-effect:after{
+          border-color:{{block.settings.textcolor}};
+        }
+      {% endif %}
+    {% endfor %}
+    @media only screen and (max-width:767px) {
+      #shopify-section-{{ section.id }}.shopify-section{
+      --layoutRadius:{{ section.settings.image_radius_mobile }}px;
+      --collage-spacing:{{ section.settings.image_spacing_mobile}}px;
+      }
+    }
+    @media only screen and (max-width:575px) {
+      #shopify-section-{{ section.id }}.shopify-section{
+        padding-top:{{ section.settings.top_space_mobile }}px;
+        padding-bottom:{{ section.settings.bottom_space_mobile }}px;
+      }
+    }
+  {% if section.settings.section_visibility == 'large' %}
+      @media (max-width: 767px) {
+        #shopify-section-{{ section.id }}{
+          display: none !important;
+        }
+      }
+    {% elsif section.settings.section_visibility == 'small' %}
+      @media (min-width: 768px) {
+        #shopify-section-{{ section.id }}{
+          display: none !important;
+        }
+      }
+  {% endif %}
+  </style> 
+  
+  {% schema %} 
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Collage Grid",
+    "tag": "section",
+    "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+    "settings": [
+      {
+        "type": "checkbox", 
+        "id": "enable_fullwidth",
+        "label": "Enable full width",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "image_layout",
+        "default": "sharp",
+        "label": "Image layout",
+        "options": [
+          {
+            "value": "rounded",
+            "label": "Rounded"
+          },
+          {
+            "value": "sharp",
+            "label": "Sharp"
+          }
+        ]
+      },
+      {
+        "type": "checkbox", 
+        "id": "enable_image_animation",
+        "label": "Enable image zoom animation",
+        "default": true
+      },
+      {
+        "type": "checkbox", 
+        "id": "enable_hover_effect",
+        "label": "Enable hover effect",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "image_radius_desktop",
+        "default": 10,
+        "label": "Desktop rounded image radius",
+        "min":2,
+        "max":40,
+        "step":1,
+        "unit":"px"
+      },
+      {
+        "type": "range",
+        "id": "image_radius_mobile",
+        "default": 10,
+        "label": "Mobile rounded image radius",
+        "min":2,
+        "max":40,
+        "step":1,
+        "unit":"px"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "default": "h2",
+        "label": "Heading size",
+        "options": [
+          {
+            "value": "h3",
+            "label": "Small"
+          },
+          {
+            "value": "h2",
+            "label": "Medium"
+          },
+          {
+            "value": "h1",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "button_size",
+        "default": "xsmall",
+        "label": "Button size",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "xsmall",
+            "label": "Small"
+          },
+          {
+            "value": "small",
+            "label": "Medium"
+          },
+          {
+            "value": "med",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "space_in_images",
+        "label": "Show space between images",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "image_spacing_desktop",
+        "default": 10,
+        "label": "Desktop space between images",
+        "min":2,
+        "max":40,
+        "step":1,
+        "unit":"px"
+      },
+      {
+        "type": "range",
+        "id": "image_spacing_mobile",
+        "default": 10,
+        "label": "Mobile space between images",
+        "min":2,
+        "max":40,
+        "step":1,
+        "unit":"px"
+      },
+      {
+        "type": "header",
+        "content": "Color"
+      },
+      {
+        "type": "select",
+        "id": "bgcolor",
+        "label": "Background",
+        "default": "primary",
+        "options": [
+          {
+            "value": "primary",
+            "label": "Primary"
+          },
+          {
+            "value": "secondary",
+            "label": "Secondary"
+          },
+          {
+            "value": "tertiary",
+            "label": "Tertiary"
+          },
+          {
+            "value": "quaternary",
+            "label": "Quaternary"
+          },
+          {
+            "value": "gradient",
+            "label": "Gradient"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "section_visibility",
+        "label": "Section visibility",
+        "default": "always",
+        "options": [
+          {
+            "label": "Always",
+            "value": "always"
+          },
+          {
+            "label": "Small devices only",
+            "value": "small"
+          },
+          {
+            "label": "Large devices only",
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Section spacing"
+      },
+      {
+        "type": "range",
+        "id": "top_space_desktop",
+        "label": "Top spacing (desktop)",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "bottom_space_desktop",
+        "label": "Bottom spacing (desktop)",
+        "default": 50,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "top_space_mobile",
+        "label": "Top spacing (mobile)",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      {
+        "type": "range",
+        "id": "bottom_space_mobile",
+        "label": "Bottom spacing (mobile)",
+        "default": 20,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      {
+        "type": "checkbox", 
+        "id": "enable_full_bnr_click",
+        "label": "Enable full banner click",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "select",
+            "id": "image_width",
+            "label": "Image width",
+            "default": "col-md-4",
+            "options": [
+               {
+                "value": "col-md-2",
+                "label": "16.7%"
+              },
+              {
+                "value": "col-md-3",
+                "label": "25%"
+              },
+              {
+                "value": "col-md-4",
+                "label": "33%"
+              },
+              {
+                "value": "col-md-6",
+                "label": "50%"
+              },
+              {
+                "value": "col-md-8",
+                "label": "66%"
+              },
+              {
+                "value": "col-md-9",
+                "label": "75%"
+              },
+              {
+                "value": "col-md-12",
+                "label": "100%"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Mobile image"
+          },
+          {
+            "type": "video",
+            "id": "video",
+            "label": "Shopify hosted video"
+          },
+          {
+            "type": "header",
+            "content": "Text"
+          },
+          {
+            "type": "text",
+            "id": "heading",
+            "default": "Heading",
+            "label": "Heading",
+            "info": "30 characters max."
+          },
+          {
+          "type": "select",
+          "id": "seo_heading",
+          "label": "Heading tag",
+          "info": "Specify heading code types for SEO and search engines for crawling purposes.",
+          "default": "h2",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ]
+      },
+          {
+            "type": "checkbox",
+            "id": "enable_text_shadow",
+            "label": "Show heading shadow",
+            "default":false
+          },
+          {
+            "type": "text",
+            "id": "subheading",
+            "default": "Sub heading",
+            "label": "Subheading",
+            "info": "30 characters max."
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button text"
+          },
+          {
+            "type": "checkbox",
+            "id": "outline_button",
+            "label": "Show as outline button",
+            "default":false
+          },
+          {
+            "type": "header",
+            "content": "Desktop"
+          },
+          {
+            "type": "select",
+            "id": "heading_size",
+            "default": "h2",
+            "label": "Heading size",
+            "options": [
+              {
+                "value": "h5",
+                "label": "Extra small"
+              },
+              {
+                "value": "h3",
+                "label": "Small"
+              },
+              {
+                "value": "h2",
+                "label": "Medium"
+              },
+              {
+                "value": "h1",
+                "label": "Large"
+              },
+              {
+                "value": "none",
+                "label": "None"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "button_size",
+            "default": "xsmall",
+            "label": "Button size",
+            "options": [
+              {
+                "value": "default",
+                "label": "Default"
+              },
+              {
+                "value": "xsmall",
+                "label": "Small"
+              },
+              {
+                "value": "small",
+                "label": "Medium"
+              },
+              {
+                "value": "med",
+                "label": "Large"
+              },
+              {
+                "value": "none",
+                "label": "None"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "content_width",
+            "default": "medium",
+            "label": "Content width",
+            "options": [
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "medium",
+                "label": "Medium"
+              },
+              {
+                "value": "large",
+                "label": "Large"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Mobile"
+          },
+          {
+            "type": "select",
+            "id": "heading_size_m",
+            "default": "h2",
+            "label": "Heading size",
+            "options": [
+              {
+                "value": "h3",
+                "label": "Small"
+              },
+              {
+                "value": "h2",
+                "label": "Medium"
+              },
+              {
+                "value": "h1",
+                "label": "Large"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "button_size_m",
+            "default": "m-xsmall",
+            "label": "Button size",
+            "options": [
+              {
+                "value": "m-default",
+                "label": "Default"
+              },
+              {
+                "value": "m-xsmall",
+                "label": "Small"
+              },
+              {
+                "value": "m-small",
+                "label": "Medium"
+              },
+              {
+                "value": "m-med",
+                "label": "Large"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "content_width_m",
+            "default": "medium",
+            "label": "Content width",
+            "options": [
+              {
+                "value": "small",
+                "label": "Small"
+              },
+              {
+                "value": "medium",
+                "label": "Medium"
+              },
+              {
+                "value": "large",
+                "label": "Large"
+              }
+            ]
+          },
+          {
+            "type": "range",
+            "id": "overlayopacity",
+            "label": "Content width",
+            "default": 0,
+            "min": 0,
+            "max": 80,
+            "step": 5,
+            "unit": "%"
+          },
+          {
+            "type": "header",
+            "content": "Overlay content position"
+          },
+          {
+            "type": "select",
+            "id": "desktop_content_position",
+            "label": "Desktop",
+            "default":"d-center",
+            "options":[
+              { 
+                "value":"d-top-left",
+                "label":"Top left"
+              },  
+              {
+                "value":"d-top-center",
+                "label":"Top center"
+              },
+              {
+                "value":"d-top-right",
+                "label":"Top right"
+              },
+              {
+                "value":"d-center-left",
+                "label":"Center left"
+              },
+              {
+                "value":"d-center",
+                "label":"Center"
+              },  
+              {
+                "value":"d-center-right",
+                "label":"Center right"
+              },
+              {
+                "value":"d-bottom-left",
+                "label":"Bottom left"
+              },
+              {
+                "value":"d-bottom-center",
+                "label":"Bottom center"
+              },
+              {
+                "value":"d-bottom-right",
+                "label":"Bottom right"
+              }       
+            ]
+          },
+          {
+            "type": "select",
+            "id": "mobile_content_position",
+            "label": "Mobile",
+            "default":"m-center",
+            "options":[
+              {
+                "value":"m-top-left",
+                "label":"Top left"
+              },  
+              {
+                "value":"m-top-center",
+                "label":"Top center"
+              },
+              {
+                "value":"m-top-right",
+                "label":"Top right"
+              },
+              {
+                "value":"m-center-left",
+                "label":"Center left"
+              },
+              {
+                "value":"m-center",
+                "label":"Center"
+              },  
+              {
+                "value":"m-center-right",
+                "label":"Center right"
+              },
+              {
+                "value":"m-bottom-left",
+                "label":"Bottom left"
+              },
+              {
+                "value":"m-bottom-center",
+                "label":"Bottom center"
+              },
+              {
+                "value":"m-bottom-right",
+                "label":"Bottom right"
+              }   
+            ]
+          },
+          {
+            "type": "header",
+            "content": "Colors"
+          },
+          {
+            "type": "color",
+            "id": "overlaycolor",
+            "label": "Overlay",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "textcolor",
+            "label": "Text",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "text_shadow_color",
+            "label": "Heading shadow",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "button_text_color",
+            "label": "Button text",
+            "default": "#ffffff"
+          },
+          {
+            "type": "color",
+            "id": "button_bg_color",
+            "label": "Button background",
+            "default": "#000000"
+          },
+          {
+            "type": "color",
+            "id": "button_border_color",
+            "label": "Button background",
+            "default": "#000000"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collage Grid",
+        "blocks": [
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          },
+           {
+            "type": "image"
+          }
+        ]
+      }
+    ]
   }
-{% endschema %}
+  {% endschema %}
+  
