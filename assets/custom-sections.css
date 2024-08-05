@@ -46,6 +46,10 @@
     padding: 0 20px;
     overflow-y: auto;
 }
+.desktop-content-width-medium {
+    width: 100%;
+    max-width: 75%;
+}
 /* ======================= Collage Grid Section Css End =================== */
 
 /* ======================= Scroll Top button Css Start =================== */
