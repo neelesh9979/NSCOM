@@ -1,48 +1,4 @@
 /* ======================= Collage Grid Section Css Start=================== */
-.yv-gallery-collage-outer.rounded:not(.space-around) {
-    border-radius: var(--layoutRadius);
-    overflow: hidden
-}
-
-.yv-gallery-collage-outer.rounded.space-around .yv-gallery-collage-img,
-.yv-gallery-collage-outer.rounded.space-around .yv-gallery-collage-item {
-    border-radius: var(--layoutRadius)
-}
-
-@keyframes ticker {
-    0% {
-        transform: translateZ(0);
-        visibility: visible
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0)
-    }
-}
-
-@keyframes ticker-reverse {
-    0% {
-        transform: translate3d(-100%, 0, 0)
-    }
-    100% {
-        transform: translateZ(0);
-        visibility: visible
-    }
-}
-
-.yv-gallery-collage-outer.space-around .row {
-    margin-right: -var(--collage-spacing);
-    margin-left: -var(--collage-spacing);
-}
-
-.yv-gallery-collage-outer.space-around .col-12 {
-    margin-bottom: calc(var(--collage-spacing) * 2);
-    padding-right: var(--collage-spacing);
-    padding-left: var(--collage-spacing)
-}
-
-.yv-gallery-collage-outer .col-12 {
-    margin-bottom: 0
-}
 
 /* ======================= Collage Grid Section Css End =================== */
 
