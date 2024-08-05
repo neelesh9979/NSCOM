@@ -16,6 +16,7 @@
           "type": "image",
           "settings": {
             "image_width": "col-md-4",
+            "image": "shopify:\/\/shop_images\/potted-seeds_925x_c304bb66-099c-4643-b636-3a1dfc9a50df.jpg",
             "heading": "Heading",
             "seo_heading": "h2",
             "enable_text_shadow": false,
@@ -44,6 +45,7 @@
           "type": "image",
           "settings": {
             "image_width": "col-md-4",
+            "image": "shopify:\/\/shop_images\/flowers-in-yellow-watering-can_925x_63db7f75-bbf5-4d59-bcb0-c50810d2c1bc.jpg",
             "heading": "Heading",
             "seo_heading": "h2",
             "enable_text_shadow": false,
@@ -72,6 +74,7 @@
           "type": "image",
           "settings": {
             "image_width": "col-md-4",
+            "image": "shopify:\/\/shop_images\/spring-gardening-set-up_925x_bcbd74b1-7342-42cc-83c5-aaf91b8fbb26.jpg",
             "heading": "Heading",
             "seo_heading": "h2",
             "enable_text_shadow": false,
