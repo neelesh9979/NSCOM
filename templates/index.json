@@ -98,12 +98,72 @@
             "button_bg_color": "#000000",
             "button_border_color": "#000000"
           }
+        },
+        "image_bq8VDc": {
+          "type": "image",
+          "settings": {
+            "image_width": "col-md-6",
+            "image": "shopify:\/\/shop_images\/young-female-models-denim_925x_0e3228f6-2f1b-42f5-b081-0724f29d5dff.jpg",
+            "heading": "Heading",
+            "seo_heading": "h2",
+            "enable_text_shadow": false,
+            "subheading": "Sub heading",
+            "link": "",
+            "btn_text": "",
+            "outline_button": false,
+            "heading_size": "h2",
+            "button_size": "xsmall",
+            "content_width": "medium",
+            "heading_size_m": "h2",
+            "button_size_m": "m-xsmall",
+            "content_width_m": "medium",
+            "overlayopacity": 0,
+            "desktop_content_position": "d-center",
+            "mobile_content_position": "m-center",
+            "overlaycolor": "#000000",
+            "textcolor": "#000000",
+            "text_shadow_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#000000",
+            "button_border_color": "#000000"
+          }
+        },
+        "image_tML9KJ": {
+          "type": "image",
+          "settings": {
+            "image_width": "col-md-6",
+            "image": "shopify:\/\/shop_images\/young-hip-woman-at-carnival_925x_5ed9a612-68f5-4b1b-bc3c-a47f2a9739a8.jpg",
+            "heading": "Heading",
+            "seo_heading": "h2",
+            "enable_text_shadow": false,
+            "subheading": "Sub heading",
+            "link": "",
+            "btn_text": "",
+            "outline_button": false,
+            "heading_size": "h2",
+            "button_size": "xsmall",
+            "content_width": "medium",
+            "heading_size_m": "h2",
+            "button_size_m": "m-xsmall",
+            "content_width_m": "medium",
+            "overlayopacity": 0,
+            "desktop_content_position": "d-center",
+            "mobile_content_position": "m-center",
+            "overlaycolor": "#000000",
+            "textcolor": "#000000",
+            "text_shadow_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#000000",
+            "button_border_color": "#000000"
+          }
         }
       },
       "block_order": [
         "image_zLLhnB",
         "image_h8RCXM",
-        "image_bGXtKh"
+        "image_bGXtKh",
+        "image_bq8VDc",
+        "image_tML9KJ"
       ],
       "settings": {
         "enable_fullwidth": true,
