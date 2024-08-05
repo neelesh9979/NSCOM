@@ -12,6 +12,20 @@
     overflow: hidden;
     position: relative;
 }
+.yv-gallery-collage-outer.space-around .row {
+    margin-right: -var(--collage-spacing);
+    margin-left: -var(--collage-spacing);
+}
+
+.yv-gallery-collage-outer.space-around .col-12 {
+    margin-bottom: calc(var(--collage-spacing) * 2);
+    padding-right: var(--collage-spacing);
+    padding-left: var(--collage-spacing)
+}
+
+.yv-gallery-collage-outer .col-12 {
+    margin-bottom: 0
+}
 /* ======================= Collage Grid Section Css End =================== */
 
 /* ======================= Scroll Top button Css Start =================== */
