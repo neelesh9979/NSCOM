@@ -71,7 +71,7 @@
                 {%- if block.settings.image != blank -%}
                   <div
                     class="image-wrapper{% if block.settings.mobile_image != blank %} d-none d-md-block{% endif %}"
-                    style="padding-bottom:{{ 1 | divided_by : block.settings.image.aspect_ratio | times: 100  }}%"
+                  
                   >
                   {%- render 'lazy-image', image: block.settings.image -%}
                   </div>
