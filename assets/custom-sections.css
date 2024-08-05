@@ -37,6 +37,15 @@
 .yv-gallery-collage-outer .col-12 {
     margin-bottom: 0
 }
+.yv-gallery-collage-detail {
+    position: absolute;
+    width: max-content;
+    z-index: 3;
+    max-width: calc(100% - 34px);
+    max-height: 80%;
+    padding: 0 20px;
+    overflow-y: auto;
+}
 /* ======================= Collage Grid Section Css End =================== */
 
 /* ======================= Scroll Top button Css Start =================== */
