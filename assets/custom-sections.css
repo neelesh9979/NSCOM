@@ -30,5 +30,26 @@
     outline: 0;
     cursor: pointer;
 }
+.yv-scroll-top svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    fill: var(--theme-color);
+}
 
+.scroll-top-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.yv-scroll-top .arrow-top {
+    width: 32%;
+    height: 32%;
+}
 /* ======================= Scroll Top button Css end here =================== */
