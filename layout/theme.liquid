@@ -282,6 +282,7 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    {{ 'common-grid.css' | asset_url | stylesheet_tag }}
     {{ 'custom-sections.css' | asset_url | stylesheet_tag }}
   </head>
 
