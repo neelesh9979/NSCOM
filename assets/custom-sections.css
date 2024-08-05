@@ -5,5 +5,11 @@
     margin-right: -10px;
     margin-left: -10px;
 }
-
+.yv-gallery-collage-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 /* ======================= Collage Grid Section Css End =================== */
