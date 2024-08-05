@@ -1,5 +1,7 @@
 /* ======================= Collage Grid Section Css Start=================== */
-
+.row{
+  display: flex;
+}
 /* ======================= Collage Grid Section Css End =================== */
 
 /* ======================= Scroll Top button Css Start =================== */
