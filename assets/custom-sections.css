@@ -50,6 +50,29 @@
 
 .yv-scroll-top .arrow-top {
     width: 32%;
-    height: 32%;
+    height: 32%
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(360deg)
+    }
+    to {
+        -webkit-transform: rotate(0)
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(360deg)
+    }
+    to {
+        transform: rotate(0)
+    }
+}
+
+.pdp-action-container.disable-buttons {
+    opacity: .3;
+    pointer-events: none
 }
 /* ======================= Scroll Top button Css end here =================== */
