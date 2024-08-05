@@ -46,6 +46,9 @@
     padding: 0 20px;
     overflow-y: auto;
 }
+.yv-gallery-collage-detail .collage-heading {
+    margin-bottom: 5px;
+}
 /* ======================= Collage Grid Section Css End =================== */
 
 /* ======================= Scroll Top button Css Start =================== */
