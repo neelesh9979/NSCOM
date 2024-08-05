@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "image_banner": {
@@ -60,8 +69,8 @@
         "bg_gradient_color": "",
         "text1color": "#000000",
         "outlinetext1color": "#000000",
-        "text2color": "#A56748",
-        "outlinetext2color": "#A56748",
+        "text2color": "#a56748",
+        "outlinetext2color": "#a56748",
         "background_overlay": "#000000",
         "section_visibility": "always",
         "top_space_desktop": 10,
@@ -108,6 +117,7 @@
         "collection_list_XQweHp",
         "collection_list_FqeNnM"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "padding_top": 16,
@@ -131,6 +141,7 @@
       "block_order": [
         "spot_Vnt63c"
       ],
+      "disabled": true,
       "settings": {
         "enable_fullwidth": true,
         "image": "shopify:\/\/shop_images\/putting-on-your-shoes_925x_aceefe9c-42db-4552-955e-e0071c2ce104.jpg",
