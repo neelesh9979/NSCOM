@@ -1,54 +1,5 @@
 /* ======================= Collage Grid Section Css Start=================== */
-.yv-gallery-collage-item {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-.row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -10px;
-    margin-left: -10px;
-}
-.yv-gallery-collage-detail .collage-heading {
-    margin-bottom: 5px;
-}
-.yv-gallery-collage-img {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.yv-gallery-collage-outer.space-around .row {
-    margin-right: -var(--collage-spacing);
-    margin-left: -var(--collage-spacing);
-}
 
-.yv-gallery-collage-outer.space-around .col-12 {
-    margin-bottom: calc(var(--collage-spacing) * 2);
-    padding-right: var(--collage-spacing);
-    padding-left: var(--collage-spacing)
-}
-
-.yv-gallery-collage-outer .col-12 {
-    margin-bottom: 0
-}
-.yv-gallery-collage-detail {
-    position: absolute;
-    width: max-content;
-    z-index: 3;
-    max-width: calc(100% - 34px);
-    max-height: 80%;
-    padding: 0 20px;
-    overflow-y: auto;
-}
-.yv-gallery-collage-detail .collage-heading {
-    margin-bottom: 5px;
-}
 /* ======================= Collage Grid Section Css End =================== */
 
 /* ======================= Scroll Top button Css Start =================== */
