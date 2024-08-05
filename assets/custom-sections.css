@@ -13,3 +13,22 @@
     overflow: hidden;
 }
 /* ======================= Collage Grid Section Css End =================== */
+
+/* ======================= Scroll Top button Css Start =================== */
+
+.yv-scroll-top {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    bottom: 50px;
+    right: 20px;
+    z-index: 4;
+    border-radius: 100%;
+    outline: 0;
+    cursor: pointer;
+}
+
+/* ======================= Scroll Top button Css end here =================== */
