@@ -1,0 +1,9 @@
+/* ======================= Collage Grid Section Css Start=================== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+/* ======================= Collage Grid Section Css End =================== */
