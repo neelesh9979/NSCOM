@@ -38,6 +38,7 @@
                  {% if block.settings.video != blank %}    
                     <deferred-media
                       class="image-wrapper"
+                      style="padding-bottom:{{ 1 | divided_by : block.settings.video.aspect_ratio | times: 100 | minus : 1 }}%;position:relative"
                     >
                       <template style="display:none">
                         {{ block.settings.video | video_tag:  image_size: '1100x',
