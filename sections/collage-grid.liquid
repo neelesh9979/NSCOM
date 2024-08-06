@@ -142,6 +142,9 @@
       border-radius:{{ section.settings.image_radius_desktop }}px;
       --collage-spacing:{{ section.settings.image_spacing_desktop }}px;
     }
+    .yv-gallery-collage-outer.rounded.space-around .yv-gallery-collage-img, .yv-gallery-collage-outer.rounded.space-around .yv-gallery-collage-item {
+        border-radius:{{ section.settings.image_radius_desktop }}px;
+    }
   
     {% for block in section.blocks %}
       #collageItem-{{ block.id }}{
