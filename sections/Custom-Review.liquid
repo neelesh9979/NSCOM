@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.css" />
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.3/assets/owl.carousel.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <div class="custom-reviews static">
   <div class="page-width">
     <div class="revie-parent">
@@ -50,9 +51,59 @@
       margin: 30,
       dots: dots,
       nav: arrow,
-      items: item,
+      items: 4,
+      center: true,
+      responsiveClass: true,
+      responsive: {
+         0: {
+             items: 1,
+             autoHeight: true
+         },
+         768: {
+             items: 1
+         },
+         980: {
+             items: 2
+         },
+         1240: {
+             items: 4
+         }
+     }
+      
     });
 </script>
+
+<style>
+.below-reviews .owl-stage-outer {
+    padding: 4rem 0;
+}
+.custom-reviews .item {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+.custom-reviews .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 123;
+}
+.custom-reviews .owl-nav button.owl-next {
+    right: 0;
+}
+.custom-reviews .owl-nav button span {
+    background: #fff;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    line-height: 40px;
+    font-size: 30px;
+    box-shadow: 0 0 40px #0000001a;
+    border-radius: 100px;
+}
+</style>
+
 
 {% schema %}
   {
