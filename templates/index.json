@@ -408,61 +408,7 @@
     "custom_review_TJXjYC": {
       "type": "Custom-Review",
       "blocks": {
-        "add_review_rc9QPA": {
-          "type": "add-review",
-          "settings": {
-            "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
-            "sizes": "5"
-          }
-        },
-        "add_review_8X73T8": {
-          "type": "add-review",
-          "settings": {
-            "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
-            "sizes": "5"
-          }
-        },
-        "add_review_ywUfcx": {
-          "type": "add-review",
-          "settings": {
-            "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
-            "sizes": "5"
-          }
-        },
-        "add_review_gxpTxT": {
-          "type": "add-review",
-          "settings": {
-            "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
-            "sizes": "5"
-          }
-        },
-        "add_review_hYfTnA": {
-          "type": "add-review",
-          "settings": {
-            "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
-            "sizes": "5"
-          }
-        },
         "add_review_exreka": {
-          "type": "add-review",
-          "settings": {
-            "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
-            "sizes": "5"
-          }
-        },
-        "add_review_mzPV96": {
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
@@ -473,13 +419,7 @@
         }
       },
       "block_order": [
-        "add_review_rc9QPA",
-        "add_review_8X73T8",
-        "add_review_ywUfcx",
-        "add_review_gxpTxT",
-        "add_review_hYfTnA",
-        "add_review_exreka",
-        "add_review_mzPV96"
+        "add_review_exreka"
       ],
       "settings": {
         "title": "",
