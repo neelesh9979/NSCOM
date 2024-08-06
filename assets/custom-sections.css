@@ -3,12 +3,9 @@
   display: flex;
 }
 
-.yv-gallery-collage-img {
+.yv-gallery-collage-img img {
     width: 100%;
     height: 100%;
-    background-color: var(--colorImageBg);
-    overflow: hidden;
-    position: relative
 }
 /* ======================= Collage Grid Section Css End =================== */
 
