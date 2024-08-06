@@ -416,10 +416,60 @@
             "customerName": "<p>Lorem ipsum <\/p>",
             "sizes": "5"
           }
+        },
+        "add_review_K3MNFz": {
+          "type": "add-review",
+          "settings": {
+            "title": "Lorem ipsum",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "customerName": "<p>Lorem ipsum <\/p>",
+            "sizes": "5"
+          }
+        },
+        "add_review_yUVhjX": {
+          "type": "add-review",
+          "settings": {
+            "title": "Lorem ipsum",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "customerName": "<p>Lorem ipsum <\/p>",
+            "sizes": "5"
+          }
+        },
+        "add_review_kQkPXH": {
+          "type": "add-review",
+          "settings": {
+            "title": "Lorem ipsum",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "customerName": "<p>Lorem ipsum <\/p>",
+            "sizes": "5"
+          }
+        },
+        "add_review_3Eigi8": {
+          "type": "add-review",
+          "settings": {
+            "title": "Lorem ipsum",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "customerName": "<p>Lorem ipsum <\/p>",
+            "sizes": "5"
+          }
+        },
+        "add_review_ykRTVp": {
+          "type": "add-review",
+          "settings": {
+            "title": "Lorem ipsum",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
+            "customerName": "<p>Lorem ipsum <\/p>",
+            "sizes": "5"
+          }
         }
       },
       "block_order": [
-        "add_review_exreka"
+        "add_review_exreka",
+        "add_review_K3MNFz",
+        "add_review_yUVhjX",
+        "add_review_kQkPXH",
+        "add_review_3Eigi8",
+        "add_review_ykRTVp"
       ],
       "settings": {
         "title": "",
