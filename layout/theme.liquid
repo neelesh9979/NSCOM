@@ -282,8 +282,9 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    {{ 'common-grid.css' | asset_url | stylesheet_tag }}
+   {% comment %} {{ 'common-grid.css' | asset_url | stylesheet_tag }}
     {{ 'custom-sections.css' | asset_url | stylesheet_tag }}
+    {% endcomment %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
