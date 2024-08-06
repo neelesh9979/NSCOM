@@ -167,10 +167,10 @@
       ],
       "settings": {
         "enable_fullwidth": false,
-        "image_layout": "sharp",
+        "image_layout": "rounded",
         "enable_image_animation": true,
         "enable_hover_effect": true,
-        "image_radius_desktop": 40,
+        "image_radius_desktop": 9,
         "image_radius_mobile": 10,
         "heading_size": "h2",
         "button_size": "xsmall",
