@@ -478,7 +478,7 @@
         "text_color": "#000000",
         "review-heading": "",
         "star_color": "#121212",
-        "show_item": 4,
+        "show_item": 3,
         "arrow": true,
         "dots": true
       }
