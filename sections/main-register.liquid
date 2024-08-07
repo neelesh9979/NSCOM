@@ -137,10 +137,14 @@
     {%- endif -%}
      <div class="field"> 
       
-      <select name="customer[tags][loyalty_program]">
+      <!-- <select name="customer[tags][loyalty_program]">
         <option value="choose option">Choose Option</option>
         <option value="loyalty_program_yes">Yes</option>
-      </select>
+      </select> -->
+       <label for="custom-tag-checkbox">
+        <input type="checkbox" id="custom-tag-checkbox" />
+        Subscribe to special offers
+      </label>
      </div>
     <button>
       {{ 'customer.register.submit' | t }}
