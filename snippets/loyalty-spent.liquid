@@ -12,6 +12,7 @@
       {% assign current_year_total_amount = current_year_total_amount | plus: order_total_price %}
   {% endif %}
 {% endfor %}
+{{ current_year_total_amount }}
 <div class="progress-container">
     <div class="progress-title">Your loyalty program progress</div>
     
