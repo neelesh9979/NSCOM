@@ -149,7 +149,9 @@
     </div>
   </div>
 </div>
-{% render 'loyalty-spent', customer: customer %}
+{% if customer.tags contains 'loyalty_program_yes' %}                          
+  {% render 'loyalty-spent', customer: customer %}
+{% endif %}                         
 {% schema %}
 {
   "name": "t:sections.main-account.name",
