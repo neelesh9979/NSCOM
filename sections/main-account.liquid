@@ -149,7 +149,7 @@
     </div>
   </div>
 </div>
-{% if customer.tags contains 'loyalty_program_yes' %}                          
+{% if customer.tags contains 'loyalty_program_yes' and customer.orders_count > 0 %}                          
   {% render 'loyalty-spent', customer: customer %}
 {% endif %}                         
 {% schema %}
