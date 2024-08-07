@@ -135,7 +135,8 @@
         {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
-   
+     <div class="field"> 
+      
       <!-- <select name="customer[tags][loyalty_program]">
         <option value="choose option">Choose Option</option>
         <option value="loyalty_program_yes">Yes</option>
@@ -144,6 +145,7 @@
         <input type="checkbox" id="custom-tag-checkbox" />
         Subscribe to special offers
       </label>
+     </div>
     <button>
       {{ 'customer.register.submit' | t }}
     </button>
