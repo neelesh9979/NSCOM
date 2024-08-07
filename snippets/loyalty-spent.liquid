@@ -10,17 +10,15 @@
   {% if order_date >= start_date and order_date <= end_date %}
     <!-- {{ order.name }} - {{ order.total_price | money | split:'.' }} <br/> -->
       {% assign order_total_price = order.total_price  %}
-    
-      <!-- {{ order.total_price | money_without_currency }} -->
       {% assign current_year_total_amount = current_year_total_amount | plus: order_total_price %}
-    {{ current_year_total_amount }}
+    
   {% endif %}
 {% endfor %}
 <div class="progress-container">
     <div class="progress-title">Your loyalty program progress</div>
     
     <div class="progress-bar">
-        <div class="progress-text">{{ current_year_total_amount }} {{ shop.currency }}</div>
+        <div class="progress-text">{{ current_year_total_amount | divided_by: 4 }} {{ shop.currency }}</div>
         <div class="progress">
             <div class="progress-inner" style="width: 50%;"></div>
         </div>
