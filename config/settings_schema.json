@@ -7,6 +7,21 @@
     "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
+    {
+    "name": "Loyalty program spent",
+    "settings": [
+      {
+        "type": "number",
+        "id": "year_total_spent",
+        "label": "Add here total year amount"
+      },
+      {
+        "type": "number",
+        "id": "total_spent",
+        "label": "Add here total year amount"
+      }
+    ]
+  },
   {
     "name": "t:settings_schema.logo.name",
     "settings": [
