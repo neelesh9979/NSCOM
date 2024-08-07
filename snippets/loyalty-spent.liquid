@@ -8,7 +8,7 @@
   {% assign order_date = order.created_at | date: "%s" %}
   
   {% if order_date >= start_date and order_date <= end_date %}
-    {% assign current_year_total_amount = current_year_total_amount | plus: order.total_price %}
+    {% assign current_year_total_amount = current_year_total_amount | plus: order.total_price | divided_by:100 %}
   {% endif %}
 {% endfor %}
 <div class="progress-container">
