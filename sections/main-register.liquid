@@ -151,7 +151,40 @@
     </button>
   {%- endform -%}
 </div>
+<script>
+// Get references to the checkbox and input container
+const checkbox = document.getElementById('myCheckbox');
+const inputContainer = document.getElementById('inputContainer');
 
+// Define the HTML for the input field to be added
+const inputFieldHTML = '<input type="text" name="customer[tags][tag-1]" value="" />';
+
+// Function to add an input field
+function addInputField() {
+    // Check if the input field already exists
+    if (!inputContainer.querySelector('input[type="text"]')) {
+        inputContainer.innerHTML = inputFieldHTML;
+    }
+}
+
+// Function to remove the input field
+function removeInputField() {
+    inputContainer.innerHTML = '';
+}
+
+// Function to handle checkbox change
+function handleCheckboxChange() {
+    if (checkbox.checked) {
+        addInputField();
+    } else {
+        removeInputField();
+    }
+}
+
+// Add event listener to the checkbox
+checkbox.addEventListener('change', handleCheckboxChange);
+
+</script>
 {% schema %}
 {
   "name": "t:sections.main-register.name",
