@@ -9,8 +9,8 @@
   
   {% if order_date >= start_date and order_date <= end_date %}
     <!-- {{ order.name }} - {{ order.total_price | money_without_currency }} <br/> -->
-     {% assign order_total_price = order.total_price | money_without_currency | plus: 0 %}
-    {{ order_total_price }}
+      {% assign order_total_price = order.total_price | money_without_currency | plus: 0 %}
+      {{ order_total_price }}
       {% assign current_year_total_amount = current_year_total_amount | plus: order_total_price %}
   {% endif %}
 {% endfor %}
