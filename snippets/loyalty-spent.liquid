@@ -11,7 +11,7 @@
     {{ order.name }} - {{ order.total_price | money_without_currency }} <br/>
      {% assign order_total_price = order.total_price | money_without_currency %}  
     
-      {% assign current_year_total_amount = current_year_total_amount | plus: order_total_price %}
+      {% assign current_year_total_amount = current_year_total_amount | plus: order.total_price | money_without_currency %}
   {% endif %}
 {% endfor %}
 <div class="progress-container">
