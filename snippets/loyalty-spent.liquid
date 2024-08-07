@@ -1,0 +1,53 @@
+<div class="progress-container">
+    <div class="progress-title">Your loyalty program progress</div>
+    
+    <div class="progress-bar">
+        <div class="progress-text">5,000 QAR</div>
+        <div class="progress">
+            <div class="progress-inner" style="width: 50%;"></div>
+        </div>
+        <div class="progress-text">10,000 QAR</div>
+    </div>
+    
+    <div class="progress-bar">
+        <div class="progress-text">5,000 QAR</div>
+        <div class="progress">
+            <div class="progress-inner" style="width: 20%;"></div>
+        </div>
+        <div class="progress-text">25,000 QAR</div>
+    </div>
+</div>
+<style>
+    .progress-container {
+        margin-bottom: 20px;
+    }
+    .progress-title {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        text-align: center;
+        font-style: italic;
+    }
+    .progress-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .progress {
+        background-color: #e0e0e0;
+        border-radius: 50px;
+        overflow: hidden;
+        width: 100%;
+        margin: 0 10px;
+        height: 20px;
+    }
+    .progress-inner {
+        background-color: #4d4238;
+        height: 100%;
+        width: 0;
+    }
+    .progress-text {
+        width: 80px;
+        text-align: center;
+    }
+</style>
