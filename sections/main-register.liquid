@@ -154,16 +154,16 @@
 </div>
 <script>
 // Get references to the checkbox and input container
-const checkbox = document.getElementById('myCheckbox');
+const checkbox = document.getElementById('custom-tag-checkbox');
 const inputContainer = document.getElementById('inputContainer');
 
 // Define the HTML for the input field to be added
-const inputFieldHTML = '<input type="text" name="customer[tags][tag-1]" value="" />';
+const inputFieldHTML = '<input type="hidden" name="customer[tags][loyalty_program]" value="loyalty_program_yes" />';
 
 // Function to add an input field
 function addInputField() {
     // Check if the input field already exists
-    if (!inputContainer.querySelector('input[type="text"]')) {
+    if (!inputContainer.querySelector('input[type="hidden"]')) {
         inputContainer.innerHTML = inputFieldHTML;
     }
 }
