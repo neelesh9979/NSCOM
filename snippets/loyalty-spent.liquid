@@ -2,7 +2,7 @@
 {% assign start_date = current_year | append: '-01-01' | date: "%s" %}
 {% assign end_date = current_year | append: '-12-31' | date: "%s" %}
   
-{% assign current_year_total_amount = 0 %}
+{% assign current_year_total_amount = 5 %}
 
 {% for order in customer.orders %}
   {% assign order_date = order.created_at | date: "%s" %}
