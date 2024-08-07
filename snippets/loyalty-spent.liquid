@@ -13,13 +13,18 @@
   {% endif %}
   {% assign total_amount_spent = total_amount_spent | plus: order_total_price %}
 {% endfor %}
+{% liquid
+assign get_year_spent_progress = current_year_total_amount | divided_by: settings.year_total_spent | times: 100
+assign total_spent_progress = total_amount_spent | divided_by: settings.total_spent | times: 100
+
+%}
 <div class="progress-container">
     <div class="progress-title">Your loyalty program progress</div>
     
     <div class="progress-bar">
         <div class="progress-text">{{ current_year_total_amount | divided_by: 100.00 }} {{ shop.currency }}</div>
         <div class="progress">
-            <div class="progress-inner" style="width: 50%;"></div>
+            <div class="progress-inner" style="width: {{ get_year_spent_progress }}%;"></div>
         </div>
         <div class="progress-text">{{ settings.year_total_spent  }} {{ shop.currency }}</div>
     </div>
@@ -27,7 +32,7 @@
     <div class="progress-bar">
         <div class="progress-text">{{ total_amount_spent | divided_by: 100.00 }} {{ shop.currency }}</div>
         <div class="progress">
-            <div class="progress-inner" style="width: 20%;"></div>
+            <div class="progress-inner" style="width: {{ total_spent_progress }}%;"></div>
         </div>
         <div class="progress-text">{{ settings.total_spent  }} {{ shop.currency }}</div>
     </div>
