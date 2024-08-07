@@ -6,7 +6,7 @@
         <div class="progress">
             <div class="progress-inner" style="width: 50%;"></div>
         </div>
-        <div class="progress-text">{{ settings.year_total_spent | t }}</div>
+        <div class="progress-text">{{ settings.year_total_spent  }} {{ shop.currency }}</div>
     </div>
     
     <div class="progress-bar">
@@ -14,7 +14,7 @@
         <div class="progress">
             <div class="progress-inner" style="width: 20%;"></div>
         </div>
-        <div class="progress-text">25,000 QAR</div>
+        <div class="progress-text">{{ settings.total_spent  }} {{ shop.currency }}</div>
     </div>
 </div>
 <style>
