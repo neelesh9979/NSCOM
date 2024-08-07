@@ -9,6 +9,8 @@
 */
 {
   "current": {
+    "year_total_spent": 10000,
+    "total_spent": 5000,
     "logo_width": 90,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
