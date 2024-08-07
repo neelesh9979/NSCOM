@@ -14,8 +14,8 @@
   {% assign total_amount_spent = total_amount_spent | plus: order_total_price %}
 {% endfor %}
 {% liquid
-assign get_year_spent_progress = current_year_total_amount | divided_by: settings.year_total_spent | times: 100
-assign total_spent_progress = total_amount_spent | divided_by: settings.total_spent | times: 100
+assign get_year_spent_progress = current_year_total_amount | divided_by: settings.year_total_spent | times: 100.00
+assign total_spent_progress = total_amount_spent | divided_by: settings.total_spent | times: 100.00
 
 %}
 <div class="progress-container">
