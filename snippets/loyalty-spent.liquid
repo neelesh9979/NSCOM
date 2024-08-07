@@ -9,6 +9,7 @@
   
   {% if order_date >= start_date and order_date <= end_date %}
     {% assign current_year_total_amount = current_year_total_amount | plus: order.total_price %}
+    {{ order.total_price }}
   {% endif %}
 {% endfor %}
 <div class="progress-container">
