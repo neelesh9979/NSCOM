@@ -2,17 +2,17 @@
 {% assign start_date = current_year | append: '-01-01' | date: "%s" %}
 {% assign end_date = current_year | append: '-12-31' | date: "%s" %}
   
-{% assign current_year_total_amount = 5 %}
+{% assign current_year_total_amount = 0 %}
 
 {% for order in customer.orders %}
   {% assign order_date = order.created_at | date: "%s" %}
   
   {% if order_date >= start_date and order_date <= end_date %}
+    {{ forloop.index }}
      {% assign order_total_price = order.total_price | money_without_currency %}  
       {% assign current_year_total_amount = current_year_total_amount | plus: order_total_price %}
   {% endif %}
 {% endfor %}
-{{ current_year_total_amount }}
 <div class="progress-container">
     <div class="progress-title">Your loyalty program progress</div>
     
