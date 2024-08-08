@@ -18,59 +18,85 @@ assign get_year_spent_progress = current_year_total_amount | divided_by: setting
 assign total_spent_progress = total_amount_spent | divided_by: settings.total_spent
 
 %}
+
 <div class="progress-container">
     <div class="progress-title">Your loyalty program progress</div>
-    
+    <label class="label-head">Spent this year</label>
     <div class="progress-bar">
         <div class="progress-text">{{ current_year_total_amount | divided_by: 100.00 }} {{ shop.currency }}</div>
         <div class="progress">
             <div class="progress-inner" style="width: {{ get_year_spent_progress }}%;"></div>
         </div>
-        <div class="progress-text">{{ settings.year_total_spent  }} {{ shop.currency }}</div>
+        <div class="progress-text year-total-spent">{{ settings.year_total_spent  }} {{ shop.currency }}</div>
     </div>
-    
+    <label class="label-head">Total Spent</label>
     <div class="progress-bar">
         <div class="progress-text">{{ total_amount_spent | divided_by: 100.00 }} {{ shop.currency }}</div>
         <div class="progress">
             <div class="progress-inner" style="width: {{ total_spent_progress }}%;"></div>
         </div>
-        <div class="progress-text">{{ settings.total_spent  }} {{ shop.currency }}</div>
+        <div class="progress-text total-spent-color">{{ settings.total_spent  }} {{ shop.currency }}</div>
     </div>
 </div>
+
+
 <style>
-    .progress-container {
-        margin-bottom: 20px;
-    }
-    .progress-title {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-        text-align: center;
-        font-style: italic;
-    }
-    .progress-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 10px;
-    }
-    .progress {
-        background-color: #e0e0e0;
-        border-radius: 50px;
-        overflow: hidden;
-        width: 100%;
-        margin: 0 10px;
-        height: 20px;
-    }
-    .progress-inner {
-        background-color: #4d4238;
-        height: 100%;
-        width: 0;
-    }
-    .progress-text {
-        width: 80px;
-        text-align: center;
-    }
+.progress-container {
+    padding: 3rem 0 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.progress-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+    font-style: italic;
+}
+.progress+.progress-text {
+    margin-left: auto;
+    padding-right: 1.5rem;
+    position: absolute;
+    right: 0;
+}
+.progress-bar .progress-text:first-child {
+    position: absolute;
+    color: #fff;
+    left: 5px;
+    height: 45px;
+    line-height: 45px;
+    background: #352c1b;
+    border-radius: 100px;
+    padding: 0 12px;
+}
+.progress-bar {
+    display: flex;
+    align-items: center;
+    /* margin-top: 15px; */
+    border: 1px solid;
+    border-radius: 100px;
+    padding: 5px;
+    position: relative;
+}
+.progress {
+    
+    overflow: hidden;
+    height: 45px;
+    width: 100%;
+}
+.progress-inner {
+    background-color: #352c1b;
+    border-radius: 50px;
+    height: 100%;
+    width: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.progress-text {
+}
+label.label-head {
+    margin-top: 1.5rem;
+}
 </style>
+  
 
  
 
