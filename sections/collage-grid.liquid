@@ -127,6 +127,19 @@
     </div>
   {% endunless %}
   <style>
+    .image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+    .yv-gallery-collage-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+    z-index: 1;
+    object-position: var(--imageFocal);
+}
    .yv-gallery-collage-detail-wrapper {
     width: 100%;
     height: auto;
