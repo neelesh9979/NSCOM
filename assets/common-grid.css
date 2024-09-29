@@ -1,42 +1,16 @@
   :root {
-    
     --heading_base_size: 0.9;
     --heading_spacing: 0.0em;
     --heading_line_height: 1.3;
     --base_spacing: 0.0em;
     --base_line_height: 1.6;
     --text_base_size: 1.0;
-    --buttonRadius: 6px;
-    --productGridRadius: 20px;
-    --headingTextTransform: ;
-    --buttonFontFamily: var(--font-family);
-    --buttonFontStyle: var(--font-style);
-    --buttonFontWeight: var(--font-weight);
-    --variantFontFamily: var(--font-family);
-    --variantFontStyle: var(--font-style);
-    --variantFontWeight: var(--font-weight);
-    --filtersHeadingFontFamily: var(--font-family);
-    --filtersHeadingFontStyle: var(--font-style);
-    --filtersHeadingFontWeight: var(--font-weight);
-    --priceFontFamily: var(--font-family);
-    --priceFontStyle: var(--font-style);
-    --priceFontWeight: var(--font-weight);
-    --tabHeadingFontFamily: var(--font-family);
-    --tabHeadingFontStyle: var(--font-style);
-    --tabHeadingFontWeight: var(--font-weight);
-    --tabHeadingTextTransform: ;
-    --navigationFontFamily: var(--font-family);
-    --navigationFontStyle: var(--font-style);
-    --navigationFontWeight: var(--font-weight);
-    --navigationTextTransform: ;
-    --variantTextTransform:uppercase;
     --xsmallText:calc(var(--text_base_size) * 10px);
     --smallText: calc(var(--text_base_size) * 12px);
     --text: calc(var(--text_base_size) * 14px);
     --mediumText: calc(var(--text_base_size) * 16px);
     --largeText: calc(var(--text_base_size) * 18px);
     --xlargeText:  calc(var(--text_base_size) * 20px);
-    --buttonAnimationDirection:translateX(-100%);
   }
 
 
