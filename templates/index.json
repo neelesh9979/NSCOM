@@ -15,8 +15,37 @@
         "image_zLLhnB": {
           "type": "image",
           "settings": {
-            "image_width": "col-md-4",
-            "image": "shopify:\/\/shop_images\/potted-seeds_925x_c304bb66-099c-4643-b636-3a1dfc9a50df.jpg",
+            "image_width": "col-md-6",
+            "image": "shopify://shop_images/potted-seeds_925x_c304bb66-099c-4643-b636-3a1dfc9a50df.jpg",
+            "heading": "Heading",
+            "seo_heading": "h2",
+            "enable_text_shadow": false,
+            "subheading": "Sub heading",
+            "link": "",
+            "btn_text": "",
+            "outline_button": false,
+            "heading_size": "h2",
+            "button_size": "xsmall",
+            "content_width": "medium",
+            "heading_size_m": "h2",
+            "button_size_m": "m-xsmall",
+            "content_width_m": "medium",
+            "overlayopacity": 0,
+            "desktop_content_position": "d-top-center",
+            "mobile_content_position": "m-bottom-center",
+            "overlaycolor": "#000000",
+            "textcolor": "#000000",
+            "text_shadow_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_bg_color": "#000000",
+            "button_border_color": "#000000"
+          }
+        },
+        "image_bGXtKh": {
+          "type": "image",
+          "settings": {
+            "image_width": "col-md-6",
+            "image": "shopify://shop_images/spring-gardening-set-up_925x_bcbd74b1-7342-42cc-83c5-aaf91b8fbb26.jpg",
             "heading": "Heading",
             "seo_heading": "h2",
             "enable_text_shadow": false,
@@ -45,36 +74,7 @@
           "type": "image",
           "settings": {
             "image_width": "col-md-4",
-            "image": "shopify:\/\/shop_images\/flowers-in-yellow-watering-can_925x_63db7f75-bbf5-4d59-bcb0-c50810d2c1bc.jpg",
-            "heading": "Heading",
-            "seo_heading": "h2",
-            "enable_text_shadow": false,
-            "subheading": "Sub heading",
-            "link": "",
-            "btn_text": "",
-            "outline_button": false,
-            "heading_size": "h2",
-            "button_size": "xsmall",
-            "content_width": "medium",
-            "heading_size_m": "h2",
-            "button_size_m": "m-xsmall",
-            "content_width_m": "medium",
-            "overlayopacity": 0,
-            "desktop_content_position": "d-center",
-            "mobile_content_position": "m-center",
-            "overlaycolor": "#000000",
-            "textcolor": "#000000",
-            "text_shadow_color": "#000000",
-            "button_text_color": "#ffffff",
-            "button_bg_color": "#000000",
-            "button_border_color": "#000000"
-          }
-        },
-        "image_bGXtKh": {
-          "type": "image",
-          "settings": {
-            "image_width": "col-md-4",
-            "image": "shopify:\/\/shop_images\/spring-gardening-set-up_925x_bcbd74b1-7342-42cc-83c5-aaf91b8fbb26.jpg",
+            "image": "shopify://shop_images/flowers-in-yellow-watering-can_925x_63db7f75-bbf5-4d59-bcb0-c50810d2c1bc.jpg",
             "heading": "Heading",
             "seo_heading": "h2",
             "enable_text_shadow": false,
@@ -102,8 +102,8 @@
         "image_bq8VDc": {
           "type": "image",
           "settings": {
-            "image_width": "col-md-6",
-            "image": "shopify:\/\/shop_images\/young-female-models-denim_925x_0e3228f6-2f1b-42f5-b081-0724f29d5dff.jpg",
+            "image_width": "col-md-4",
+            "image": "shopify://shop_images/young-female-models-denim_925x_0e3228f6-2f1b-42f5-b081-0724f29d5dff.jpg",
             "heading": "Heading",
             "seo_heading": "h2",
             "enable_text_shadow": false,
@@ -131,8 +131,8 @@
         "image_tML9KJ": {
           "type": "image",
           "settings": {
-            "image_width": "col-md-6",
-            "image": "shopify:\/\/shop_images\/young-hip-woman-at-carnival_925x_5ed9a612-68f5-4b1b-bc3c-a47f2a9739a8.jpg",
+            "image_width": "col-md-4",
+            "image": "shopify://shop_images/young-hip-woman-at-carnival_925x_5ed9a612-68f5-4b1b-bc3c-a47f2a9739a8.jpg",
             "heading": "Heading",
             "seo_heading": "h2",
             "enable_text_shadow": false,
@@ -160,8 +160,8 @@
       },
       "block_order": [
         "image_zLLhnB",
-        "image_h8RCXM",
         "image_bGXtKh",
+        "image_h8RCXM",
         "image_bq8VDc",
         "image_tML9KJ"
       ],
@@ -201,7 +201,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -229,7 +229,7 @@
     "news_ticker_LgjQBc": {
       "type": "news-ticker",
       "settings": {
-        "text1": "<p>Add promotional text here<\/p>",
+        "text1": "<p>Add promotional text here</p>",
         "text2": "",
         "row1_font_family": "--font-family",
         "row2_font_family": "--font-family",
@@ -322,7 +322,7 @@
       "disabled": true,
       "settings": {
         "enable_fullwidth": true,
-        "image": "shopify:\/\/shop_images\/putting-on-your-shoes_925x_aceefe9c-42db-4552-955e-e0071c2ce104.jpg",
+        "image": "shopify://shop_images/putting-on-your-shoes_925x_aceefe9c-42db-4552-955e-e0071c2ce104.jpg",
         "bgcolor": "primary",
         "section_visibility": "always",
         "top_space_desktop": 0,
@@ -340,16 +340,16 @@
             "title": "Where can I get some?",
             "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
             "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/apparel-tops",
-            "image": "shopify:\/\/shop_images\/marray.jpg",
-            "image_link": "shopify:\/\/collections\/apparel-tops"
+            "button_link": "shopify://collections/apparel-tops",
+            "image": "shopify://shop_images/marray.jpg",
+            "image_link": "shopify://collections/apparel-tops"
           }
         },
         "center_block_EVcTtq": {
           "type": "center_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marray.jpg",
-            "link": "shopify:\/\/collections\/bras"
+            "image": "shopify://shop_images/marray.jpg",
+            "link": "shopify://collections/bras"
           }
         },
         "right_block_JBcHg4": {
@@ -358,9 +358,9 @@
             "title": "Where can I get some?",
             "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
             "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/innerwear-tops",
-            "image": "shopify:\/\/shop_images\/marray.jpg",
-            "image_link": "shopify:\/\/collections\/innerwear-tops"
+            "button_link": "shopify://collections/innerwear-tops",
+            "image": "shopify://shop_images/marray.jpg",
+            "image_link": "shopify://collections/innerwear-tops"
           }
         }
       },
@@ -412,8 +412,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -421,8 +421,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -430,8 +430,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -439,8 +439,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -448,8 +448,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -457,8 +457,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         }
@@ -473,7 +473,7 @@
       ],
       "settings": {
         "title": "Testimonials",
-        "bg_image": "shopify:\/\/shop_images\/mens-fall-fashion-jacket_925x_622816e0-251d-44f2-8301-d828a1ec7b61.jpg",
+        "bg_image": "shopify://shop_images/mens-fall-fashion-jacket_925x_622816e0-251d-44f2-8301-d828a1ec7b61.jpg",
         "totalReview": "",
         "text_color": "#000000",
         "review-heading": "",
