@@ -121,6 +121,60 @@
   
 }
 
+  h1,
+.h1 {
+    font-size: calc( var(--heading_base_size) * 36px);
+}
+
+h2,
+.h2 {
+    font-size: calc( var(--heading_base_size) * 26px);
+}
+
+h3,
+.h3 {
+    font-size: calc( var(--heading_base_size) * 24px);
+}
+
+h4,
+.h4 {
+    font-size: calc( var(--heading_base_size) * 22px);
+}
+
+h5,
+.h5 {
+    font-size: calc( var(--heading_base_size) * 20px);
+}
+
+h6,
+.h6 {
+    font-size: calc( var(--heading_base_size) * 18px);
+}
+
+.text-xsmall {
+    font-size: var(--xsmallText);
+}
+
+.text-small {
+    font-size: var(--smallText);
+}
+
+.text {
+    font-size: var(--text);
+}
+
+.text-medium {
+    font-size: var(--mediumText)!important;
+}
+
+.text-large {
+    font-size: var(--largeText)!important;
+}
+
+.text-xlarge {
+    font-size: var(--xlargeText)!important;
+}
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);
