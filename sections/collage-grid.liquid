@@ -85,8 +85,7 @@
                 {%- endif -%}
                 {%- endif -%}
               </div>
-              <div class="yv-gallery-collage-detail-wrapper"{% if settings.enable_animation %} data-aos="fade-up" data-aos-delay="200"{% endif %}>
-                <div class="yv-gallery-collage-detail{% if block.settings.enable_text_shadow and block.settings.text_shadow_color != 'rgba(0,0,0,0)' %} text-shadow-enable{% endif %} desktop-content-width-{{ block.settings.content_width }} mobile-content-width-{{ block.settings.content_width_m }} {{ block.settings.desktop_content_position }} {{ dTextAlignment }} {{ block.settings.mobile_content_position }} {{ mTextAlignment }}">
+             <div class="yv-gallery-collage-detail{% if block.settings.enable_text_shadow and block.settings.text_shadow_color != 'rgba(0,0,0,0)' %} text-shadow-enable{% endif %} desktop-content-width-{{ block.settings.content_width }} mobile-content-width-{{ block.settings.content_width_m }} {{ block.settings.desktop_content_position }} {{ dTextAlignment }} {{ block.settings.mobile_content_position }} {{ mTextAlignment }}">
                   {%- if block.settings.heading != blank -%}
                     {% liquid
                       assign headings_size = ''
@@ -116,7 +115,6 @@
                     <span href="{{ block.settings.link }}" class="button {{ block.settings.button_size_m }}-btn{% if block.settings.outline_button %} outline-button{% endif %} d-inline-flex d-md-none">{{ block.settings.btn_text }}</span>
                   {%- endif -%}
                 </div>
-              </div>
             </{%- if block.settings.link != blank -%}a{%- else -%}div{%- endif -%}>
           </div>
               
