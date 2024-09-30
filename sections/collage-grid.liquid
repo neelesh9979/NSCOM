@@ -124,282 +124,309 @@
     {% unless section.settings.enable_fullwidth %}
     </div>
   {% endunless %}
-  <style>
-  
-
-    .image-wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
+                      
+<style>
+  .image-wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
-    .yv-gallery-collage-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 1s;
-    z-index: 1;
-    object-position: var(--imageFocal);
-}
-   .yv-gallery-collage-detail-wrapper {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    }
 
-    .yv-gallery-collage-item {
-        display: block;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden
-    }
+.yv-gallery-collage-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 1s;
+	z-index: 1;
+	object-position: var(--imageFocal);
+}
+
+.yv-gallery-collage-detail-wrapper {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.yv-gallery-collage-item {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden
+}
 
 .yv-gallery-collage-item.hover-effect:before,
 .yv-gallery-collage-item.hover-effect:after {
-    bottom: 20px;
-    content: "";
-    left: 20px;
-    opacity: 0;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    -webkit-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
-    -o-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
-    transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
-    z-index: 1;
+	bottom: 20px;
+	content: "";
+	left: 20px;
+	opacity: 0;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	-webkit-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	-o-transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
+	z-index: 1;
 }
 
 .yv-gallery-collage-item.hover-effect:before {
-    border-bottom: 1px solid;
-    border-top: 1px solid;
-    -webkit-transform: scale(0, 1);
-    -ms-transform: scale(0, 1);
-    -o-transform: scale(0, 1);
-    transform: scale(0, 1);
+	border-bottom: 1px solid;
+	border-top: 1px solid;
+	-webkit-transform: scale(0, 1);
+	-ms-transform: scale(0, 1);
+	-o-transform: scale(0, 1);
+	transform: scale(0, 1);
 }
 
 .yv-gallery-collage-item.hover-effect:after {
-    border-left: 1px solid;
-    border-right: 1px solid;
-    -webkit-transform: scale(1, 0);
-    -ms-transform: scale(1, 0);
-    -o-transform: scale(1, 0);
-    transform: scale(1, 0);
+	border-left: 1px solid;
+	border-right: 1px solid;
+	-webkit-transform: scale(1, 0);
+	-ms-transform: scale(1, 0);
+	-o-transform: scale(1, 0);
+	transform: scale(1, 0);
 }
 
 .yv-gallery-collage-item.hover-effect:hover:after,
 .yv-gallery-collage-item.hover-effect:hover:before {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
+	opacity: 1;
+	filter: alpha(opacity=100);
+	-webkit-transform: scale(1);
+	-ms-transform: scale(1);
+	-o-transform: scale(1);
+	transform: scale(1);
 }
 
 .yv-gallery-collage-img {
-    width: 100%;
-    height: 100%;
-    background-color: var(--colorImageBg);
-    overflow: hidden;
-    position: relative
+	width: 100%;
+	height: 100%;
+	background-color: var(--colorImageBg);
+	overflow: hidden;
+	position: relative
 }
 
 .yv-gallery-collage-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 1s;
-    z-index: 1;
-    object-position: var(--imageFocal)
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 1s;
+	z-index: 1;
+	object-position: var(--imageFocal)
 }
 
 .yv-gallery-collage-img .placeholder-svg {
-    height: 440px;
-    display: block
+	height: 440px;
+	display: block
 }
 
 .yv-gallery-collage-detail {
-    position: absolute;
-    width: max-content;
-    z-index: 3;
-    max-width: calc(100% - 34px);
-    max-height: 80%;
-    padding: 0 20px;
-    overflow-y: auto
+	position: absolute;
+	width: max-content;
+	z-index: 3;
+	max-width: calc(100% - 34px);
+	max-height: 80%;
+	padding: 0 20px;
+	overflow-y: auto
 }
 
 .yv-gallery-collage-detail .collage-heading {
-    margin-bottom: 5px
+	margin-bottom: 5px
 }
 
 .text-shadow-enable .collage-heading {
-    text-shadow: 1px 1px 4px rgb(var(--text-shadow-color));
+	text-shadow: 1px 1px 4px rgb(var(--text-shadow-color));
 }
-    
+
 .yv-gallery-collage-img:after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 1;
-    background: var(--overlayColor);
-    opacity: var(--overlayOpacity)
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	background: var(--overlayColor);
+	opacity: var(--overlayOpacity)
 }
+
 .yv-gallery-collage-outer.space-around .col-12 {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
+
 .button.white-button {
-    background-color: #fff;
-    border-color: #000;
-    color: #000
+	background-color: #fff;
+	border-color: #000;
+	color: #000
 }
+
 .yv-gallery-collage-detail .button {
-    border-radius: 6px;
-    overflow: hidden;
-    margin-top: 12px;
+	border-radius: 6px;
+	overflow: hidden;
+	margin-top: 12px;
 }
+
 .yv-gallery-collage-detail .button small {
-    color: #fff !important;
-    position: relative;
-    z-index: 1;
-       transition: .6s ease-out;
-}    
-.yv-gallery-collage-detail .button:hover small {
-    color: #000 !important;
-}    
-.yv-gallery-collage-detail .button:after {
-  display: none;
+	color: #fff !important;
+	position: relative;
+	z-index: 1;
+	transition: .6s ease-out;
 }
+
+.yv-gallery-collage-detail .button:hover small {
+	color: #000 !important;
+}
+
+.yv-gallery-collage-detail .button:after {
+	display: none;
+}
+
 .button.outline-button {
-    background-color: transparent;
-    border-color: var(--colorBtnPrimaryText);
-    color: var(--colorBtnPrimaryText);
+	background-color: transparent;
+	border-color: var(--colorBtnPrimaryText);
+	color: var(--colorBtnPrimaryText);
 }
 
 .button.outline-button:hover {
-    background: var(--colorBtnPrimaryText);
+	background: var(--colorBtnPrimaryText);
 }
 
 .button.xsmall-btn {
-    min-width: 90px;
-    min-height: 26px;
-    font-size: 10px;
-    padding: 10px 12px
+	min-width: 90px;
+	min-height: 26px;
+	font-size: 10px;
+	padding: 10px 12px
 }
 
 .button.small-btn {
-    min-width: 126px;
-    min-height: 44px;
-    font-size: 14px
+	min-width: 126px;
+	min-height: 44px;
+	font-size: 14px
 }
 
 .btn-block {
-    width: 100%;
-    min-width: auto !important
+	width: 100%;
+	min-width: auto !important
 }
 
 
 @media (min-width: 1025px) {
-.button:before, .pdp-action-container button.shopify-payment-button__button--hidden:before, .pdp-action-container button.shopify-payment-button__button:before, .tertiary-button:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: initial;
-    width: 0;
-    height: 100%;
-    z-index: 1;
-    transition: 0.6s ease-in-out;
-    box-shadow: none;
-    border: 0;
-}
-.button:hover:before,
-.pdp-action-container button.shopify-payment-button__button--hidden:hover:before,
-.pdp-action-container button.shopify-payment-button__button:hover:before,
-.secondary-button:hover:before {
-    right:auto;
-    left:0;
-    width:100%;
-    }
 
-}  
+	.button:before,
+	.pdp-action-container button.shopify-payment-button__button--hidden:before,
+	.pdp-action-container button.shopify-payment-button__button:before,
+	.tertiary-button:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: initial;
+		width: 0;
+		height: 100%;
+		z-index: 1;
+		transition: 0.6s ease-in-out;
+		box-shadow: none;
+		border: 0;
+	}
+
+	.button:hover:before,
+	.pdp-action-container button.shopify-payment-button__button--hidden:hover:before,
+	.pdp-action-container button.shopify-payment-button__button:hover:before,
+	.secondary-button:hover:before {
+		right: auto;
+		left: 0;
+		width: 100%;
+	}
+
+}
+
 .button::before {
-    background-color: var(--colorBtnPrimaryText);
+	background-color: var(--colorBtnPrimaryText);
 }
-    
+
 @media (min-width: 768px) {
-.desktop-content-width-medium {
-  width: 100%;
-  max-width: 75%;
-}
-.d-text-left {
-        text-align: left;
-    }
-    .d-text-right {
-        text-align: right;
-    }
-    .d-text-center {
-        text-align: center;
-    }
-    .d-top-left {
-        top: 40px;
-        left: 15px;
-    }
-    .d-top-center {
-        top: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .d-top-right {
-        top: 40px;
-        right: 15px;
-    }
-    .d-center-left {
-        top: 50%;
-        left: 15px;
-        transform: translateY(-50%);
-    }
-    .d-center {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .d-center-right {
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
-    }
-    .d-bottom-left {
-        bottom: 40px;
-        left: 15px;
-    }
-    .d-bottom-center {
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .d-bottom-right {
-        bottom: 40px;
-        right: 15px;
-    } 
-  
+	.desktop-content-width-medium {
+		width: 100%;
+		max-width: 75%;
+	}
+
+	.d-text-left {
+		text-align: left;
+	}
+
+	.d-text-right {
+		text-align: right;
+	}
+
+	.d-text-center {
+		text-align: center;
+	}
+
+	.d-top-left {
+		top: 40px;
+		left: 15px;
+	}
+
+	.d-top-center {
+		top: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.d-top-right {
+		top: 40px;
+		right: 15px;
+	}
+
+	.d-center-left {
+		top: 50%;
+		left: 15px;
+		transform: translateY(-50%);
+	}
+
+	.d-center {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.d-center-right {
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+	}
+
+	.d-bottom-left {
+		bottom: 40px;
+		left: 15px;
+	}
+
+	.d-bottom-center {
+		bottom: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.d-bottom-right {
+		bottom: 40px;
+		right: 15px;
+	}
+
 }
 
 @media (max-width: 767px) {
-    .m-text-center {
-        text-align: center;
-    }
-    .m-center {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
+	.m-text-center {
+		text-align: center;
+	}
+
+	.m-center {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 }
     
     #shopify-section-{{ section.id }}.shopify-section{
