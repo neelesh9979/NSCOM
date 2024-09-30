@@ -111,8 +111,8 @@
                               assign btn_size =block.settings.button_size
                            endif
                     %}
-                    <span href="{{ block.settings.link }}" class="button {{ btn_size }}-btn{% if block.settings.outline_button %} outline-button{% endif %} d-none d-md-inline-flex">{{ block.settings.btn_text }}</span>
-                    <span href="{{ block.settings.link }}" class="button {{ block.settings.button_size_m }}-btn{% if block.settings.outline_button %} outline-button{% endif %} d-inline-flex d-md-none">{{ block.settings.btn_text }}</span>
+                    <span href="{{ block.settings.link }}" class="button {{ btn_size }}-btn{% if block.settings.outline_button %} outline-button{% endif %} d-none d-md-inline-flex"><small>{{ block.settings.btn_text }}</small></span>
+                    <span href="{{ block.settings.link }}" class="button {{ block.settings.button_size_m }}-btn{% if block.settings.outline_button %} outline-button{% endif %} d-inline-flex d-md-none"><small>{{ block.settings.btn_text }}</small></span>
                   {%- endif -%}
                 </div>
             </{%- if block.settings.link != blank -%}a{%- else -%}div{%- endif -%}>
