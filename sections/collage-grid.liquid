@@ -239,11 +239,7 @@
 .text-shadow-enable .collage-heading {
     text-shadow: 1px 1px 4px rgb(var(--text-shadow-color));
 }
-
-.yv-gallery-collage-detail .button {
-    margin-top: 12px
-}
-
+    
 .yv-gallery-collage-img:after {
     position: absolute;
     content: "";
@@ -266,7 +262,12 @@
 .yv-gallery-collage-detail .button {
     color: #fff !important;
     border-radius: 6px;
+    overflow: hidden;
+    margin-top: 12px;
 }
+.yv-gallery-collage-detail .button:hover {
+    color: #000 !important;
+}    
 .yv-gallery-collage-detail .button:after {
   display: none;
 }
