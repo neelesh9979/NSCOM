@@ -301,16 +301,18 @@
 
 
 @media (min-width: 1025px) {
-.button:before,
-.pdp-action-container button.shopify-payment-button__button--hidden:before,
-.pdp-action-container button.shopify-payment-button__button:before,
-.tertiary-button:before {
+.button:before, .pdp-action-container button.shopify-payment-button__button--hidden:before, .pdp-action-container button.shopify-payment-button__button:before, .tertiary-button:before {
     content: "";
-    position: absolute;top:0;
-      right:0;
-      width:0;
-      height:100%;z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: initial;
+    width: 0;
+    height: 100%;
+    z-index: 1;
     transition: 0.6s ease-in-out;
+    box-shadow: none;
+    border: 0;
 }
 .button:hover:before,
 .pdp-action-container button.shopify-payment-button__button--hidden:hover:before,
