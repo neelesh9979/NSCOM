@@ -1,0 +1,241 @@
+<div class="{% if section.settings.enable_full_width == false %}page-width {% endif %}  section-{{ section.id }}-padding">
+  <h2 class="collection-list-title {{ section.settings.heading_alignment }}">{{ section.settings.title }}</h2>
+  <div class="collection-list-container {{ section.settings.shape }}">
+    {% for block in section.blocks %}
+      {% assign collection = block.settings.collection %}
+      {% if collection %}
+        {% assign image = block.settings.custom_image | default: collection.image %}
+        {% assign title = block.settings.custom_title | default: collection.title %}
+        <a href="{{ collection.url }}">
+          <div class="collection-item">
+          <div class="image-container">
+            <img src="{{ image | img_url:'large' }}" alt="{{ title }}" width="" height="">
+            <div class="overlay">
+              <div class="collection-title">
+                {{ title }}
+              </div>
+            </div>
+          </div>
+        </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{% schema %}
+{
+  "name": "Image with Collections",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.collection-list.settings.title.default",
+      "label": "t:sections.collection-list.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_full_width",
+      "label": "Enable Full Width",
+      "default": true      
+    },
+    {
+      "type": "select",
+      "id": "shape",
+      "label": "Block Shape",
+      "options": [
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        }
+      ],
+      "default": "square"
+    },
+    {
+      "type": "range",
+      "id": "image_opacity",
+      "label": "Image Opacity",
+      "min": 0,
+      "max": 100,
+      "unit": "%",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection Block",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Image (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Collections"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+/* Heading predefine alignment start here */
+.left{
+  text-align: "left"
+}
+.right{
+  text-align: "right"
+}
+.center{
+  text-align: "center"
+}
+/* Heading predefine alignment end here */
+  
+.collection-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.collection-list-container.square .collection-item {
+  aspect-ratio: 1 / 1;
+}
+
+.collection-list-container.circle .collection-item {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.collection-item .image-container {
+  position: relative;
+}
+
+.collection-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.collection-item .overlay {
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.collection-item .image-container:hover .overlay {
+    opacity: 1;
+}  
+.collection-item .collection-title {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  display: none;
+}
+
+.collection-list-container.square .collection-item:hover .overlay .collection-title,
+.collection-list-container.circle .collection-item:hover .overlay .collection-title {
+   display: block;
+    background: #fff;
+    color: #000;
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+@media (max-width: 768px) {
+  .collection-item .collection-title {
+    display: block;
+  }
+}
+</style>
+
+
