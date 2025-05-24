@@ -147,7 +147,7 @@
     "blocks": {
       "15680787540714512054": {
         "type": "shopify://apps/webiste-audit-cro/blocks/app-embed/5c18ae8c-2db0-48d8-8288-1dc0644c1602",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
