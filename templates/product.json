@@ -109,10 +109,18 @@
             "product": "{{product}}",
             "colour": "#ff0000"
           }
+        },
+        "webiste_audit_cro_recently_view_product_a9kQxf": {
+          "type": "shopify://apps/webiste-audit-cro/blocks/recently-view-product/5c18ae8c-2db0-48d8-8288-1dc0644c1602",
+          "settings": {
+            "recently_viewed_products_title": "Recently Viewed Products",
+            "recently_viewed_products_description": ""
+          }
         }
       },
       "block_order": [
-        "webiste_audit_cro_star_rating_4hURiA"
+        "webiste_audit_cro_star_rating_4hURiA",
+        "webiste_audit_cro_recently_view_product_a9kQxf"
       ],
       "settings": {
         "include_margins": true
