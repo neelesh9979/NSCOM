@@ -103,13 +103,6 @@
     "1748069768b48975e8": {
       "type": "apps",
       "blocks": {
-        "webiste_audit_cro_star_rating_4hURiA": {
-          "type": "shopify://apps/webiste-audit-cro/blocks/star_rating/5c18ae8c-2db0-48d8-8288-1dc0644c1602",
-          "settings": {
-            "product": "{{product}}",
-            "colour": "#ff0000"
-          }
-        },
         "webiste_audit_cro_recently_view_product_a9kQxf": {
           "type": "shopify://apps/webiste-audit-cro/blocks/recently-view-product/5c18ae8c-2db0-48d8-8288-1dc0644c1602",
           "settings": {
@@ -119,7 +112,6 @@
         }
       },
       "block_order": [
-        "webiste_audit_cro_star_rating_4hURiA",
         "webiste_audit_cro_recently_view_product_a9kQxf"
       ],
       "settings": {
