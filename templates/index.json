@@ -12,13 +12,13 @@
     "17482818720b66bc12": {
       "type": "apps",
       "blocks": {
-        "judge_me_reviews_medals_XntRnz": {
-          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "judge_me_reviews_ugc_media_grid_VwTtkm": {
+          "type": "shopify://apps/judge-me-reviews/blocks/ugc_media_grid/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         }
       },
       "block_order": [
-        "judge_me_reviews_medals_XntRnz"
+        "judge_me_reviews_ugc_media_grid_VwTtkm"
       ],
       "settings": {
         "include_margins": true
