@@ -1,5 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "17482818720b66bc12": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_medals_XntRnz": {
+          "type": "shopify://apps/judge-me-reviews/blocks/medals/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_medals_XntRnz"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -14,7 +38,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -42,7 +66,7 @@
     "news_ticker_LgjQBc": {
       "type": "news-ticker",
       "settings": {
-        "text1": "<p>Add promotional text here<\/p>",
+        "text1": "<p>Add promotional text here</p>",
         "text2": "",
         "row1_font_family": "--font-family",
         "row2_font_family": "--font-family",
@@ -60,8 +84,8 @@
         "bg_gradient_color": "",
         "text1color": "#000000",
         "outlinetext1color": "#000000",
-        "text2color": "#A56748",
-        "outlinetext2color": "#A56748",
+        "text2color": "#a56748",
+        "outlinetext2color": "#a56748",
         "background_overlay": "#000000",
         "section_visibility": "always",
         "top_space_desktop": 10,
@@ -133,7 +157,7 @@
       ],
       "settings": {
         "enable_fullwidth": true,
-        "image": "shopify:\/\/shop_images\/putting-on-your-shoes_925x_aceefe9c-42db-4552-955e-e0071c2ce104.jpg",
+        "image": "shopify://shop_images/putting-on-your-shoes_925x_aceefe9c-42db-4552-955e-e0071c2ce104.jpg",
         "bgcolor": "primary",
         "section_visibility": "always",
         "top_space_desktop": 0,
@@ -151,16 +175,16 @@
             "title": "Where can I get some?",
             "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
             "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/apparel-tops",
-            "image": "shopify:\/\/shop_images\/marray.jpg",
-            "image_link": "shopify:\/\/collections\/apparel-tops"
+            "button_link": "shopify://collections/apparel-tops",
+            "image": "shopify://shop_images/marray.jpg",
+            "image_link": "shopify://collections/apparel-tops"
           }
         },
         "center_block_EVcTtq": {
           "type": "center_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/marray.jpg",
-            "link": "shopify:\/\/collections\/bras"
+            "image": "shopify://shop_images/marray.jpg",
+            "link": "shopify://collections/bras"
           }
         },
         "right_block_JBcHg4": {
@@ -169,9 +193,9 @@
             "title": "Where can I get some?",
             "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout",
             "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/innerwear-tops",
-            "image": "shopify:\/\/shop_images\/marray.jpg",
-            "image_link": "shopify:\/\/collections\/innerwear-tops"
+            "button_link": "shopify://collections/innerwear-tops",
+            "image": "shopify://shop_images/marray.jpg",
+            "image_link": "shopify://collections/innerwear-tops"
           }
         }
       },
@@ -223,8 +247,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -232,8 +256,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -241,8 +265,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -250,8 +274,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -259,8 +283,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -268,8 +292,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -277,8 +301,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         },
@@ -286,8 +310,8 @@
           "type": "add-review",
           "settings": {
             "title": "Lorem ipsum",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>",
-            "customerName": "<p>Lorem ipsum <\/p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "customerName": "<p>Lorem ipsum </p>",
             "sizes": "5"
           }
         }
@@ -315,6 +339,7 @@
     }
   },
   "order": [
+    "17482818720b66bc12",
     "image_banner",
     "news_ticker_LgjQBc",
     "circle_collection_list_YMYpAL",
