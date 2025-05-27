@@ -167,6 +167,11 @@
         "type": "shopify://apps/scroll-to-top-button/blocks/app-embed-block/6834cf1c-7dfe-49db-850d-5e0d94ae2b72",
         "disabled": false,
         "settings": {}
+      },
+      "1168133392437933222": {
+        "type": "shopify://apps/webiste-audit-cro/blocks/back-to-top/5c18ae8c-2db0-48d8-8288-1dc0644c1602",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
